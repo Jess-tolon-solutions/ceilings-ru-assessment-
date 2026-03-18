@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>South Florida Restaurant Violation Map – Ceilings R Us</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{height:100%}
+body{height:100%;font-family:'DM Sans',sans-serif;background:#F5F3EE;color:#1A2E2E;overflow:hidden;}
+:root{
+  --teal:#116782;--teal-mid:#118484;--forest:#298d29;
+  --cream:#F5F3EE;--white:#fff;--charcoal:#1A2E2E;
+  --gray:#6B7E7E;--pale:#EAF4F5;--rule:#C0D8DA;
+  --red:#C0392B;--amber:#D4820A;--lgray:#8C9E9E;
+}
+
+/* SCREENS */
+.screen{display:none;width:100%;height:100%;}
+.screen.active{display:flex;}
+
+/* ── GATE ── */
+#screen-gate{align-items:center;justify-content:center;background:var(--cream);padding:32px 20px;overflow-y:auto;}
+.gate-wrap{background:#fff;border:1px solid var(--rule);border-top:4px solid var(--teal);border-radius:8px;padding:36px;max-width:480px;width:100%;box-shadow:0 8px 40px rgba(17,103,130,.1);}
+.gate-logo{display:flex;align-items:center;gap:10px;margin-bottom:24px;}
+.gate-logo-mark{width:36px;height:36px;background:var(--teal);border-radius:4px;display:flex;align-items:center;justify-content:center;color:white;font-family:'Raleway',sans-serif;font-weight:800;font-size:15px;}
+.gate-logo-text{font-family:'Raleway',sans-serif;font-weight:800;font-size:15px;color:var(--teal);line-height:1.1;}
+.gate-logo-text span{display:block;font-size:10px;font-weight:500;color:var(--gray);}
+.gate-wrap h2{font-family:'Raleway',sans-serif;font-size:21px;font-weight:800;color:var(--teal);margin-bottom:6px;}
+.gate-wrap p{font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.fg{margin-bottom:11px;}
+.fg label{display:block;font-size:11px;font-weight:600;color:var(--charcoal);margin-bottom:4px;letter-spacing:.04em;text-transform:uppercase;}
+.fg input,.fg select{width:100%;padding:9px 11px;border:1.5px solid var(--rule);border-radius:4px;font-size:13px;font-family:'DM Sans',sans-serif;color:var(--charcoal);background:#FAFCFC;outline:none;-webkit-appearance:none;}
+.fg input:focus,.fg select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(17,103,130,.1);}
+.btn-p{width:100%;padding:12px;background:var(--teal);color:#fff;border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;}
+.btn-p:hover{background:#0d526a;}
+.privacy{font-size:10px;color:#AAA;text-align:center;margin-top:10px;line-height:1.5;}
+
+/* ── ZIP ── */
+#screen-zip{flex-direction:column;align-items:center;justify-content:center;background:var(--teal);padding:40px 20px;}
+.zip-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:48px 44px;max-width:440px;width:100%;text-align:center;}
+.zip-icon{font-size:40px;margin-bottom:14px;}
+.zip-card h2{font-family:'Raleway',sans-serif;font-size:26px;font-weight:800;color:#fff;margin-bottom:8px;}
+.zip-card p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:24px;}
+.zip-row{display:flex;gap:10px;}
+.zip-row input{flex:1;padding:13px 16px;border:1.5px solid rgba(255,255,255,.25);border-radius:4px;background:rgba(255,255,255,.1);color:#fff;font-size:16px;font-family:'DM Sans',sans-serif;outline:none;}
+.zip-row input::placeholder{color:rgba(255,255,255,.4);}
+.zip-row input:focus{border-color:rgba(255,255,255,.6);}
+.btn-zip{padding:13px 18px;background:#fff;color:var(--teal);border:none;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.zip-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:14px;}
+
+/* ── MAP SCREEN ── */
+#screen-map{flex-direction:column;}
+.map-header{background:var(--teal);color:#fff;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.map-logo{font-family:'Raleway',sans-serif;font-weight:800;font-size:14px;color:rgba(255,255,255,.9);}
+.map-logo span{color:rgba(255,255,255,.45);font-weight:400;font-size:11px;margin-left:6px;}
+.vcount{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,.9);font-weight:500;}
+.vcount b{color:#fff;}
+.btn-reset{padding:6px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:4px;color:rgba(255,255,255,.8);font-size:12px;font-family:'DM Sans',sans-serif;cursor:pointer;}
+.btn-reset:hover{background:rgba(255,255,255,.2);}
+.map-body{display:flex;flex:1;min-height:0;}
+.sidebar{width:280px;flex-shrink:0;background:#fff;border-right:1px solid var(--rule);display:flex;flex-direction:column;overflow:hidden;}
+.sb-head{padding:12px 14px;border-bottom:1px solid var(--rule);background:var(--pale);flex-shrink:0;}
+.sb-head h3{font-size:11px;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;}
+.sb-head p{font-size:11px;color:var(--gray);margin-top:2px;}
+.sb-list{overflow-y:auto;flex:1;}
+.si{padding:11px 14px;border-bottom:1px solid #F0ECEC;cursor:pointer;display:flex;gap:9px;align-items:flex-start;}
+.si:hover{background:var(--pale);}
+.si.active{background:var(--pale);border-left:3px solid var(--teal);}
+.si-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.si-dot.high{background:var(--red);}
+.si-dot.int{background:var(--amber);}
+.si-dot.basic{background:var(--lgray);}
+.si-name{font-size:12px;font-weight:600;color:var(--charcoal);line-height:1.3;}
+.si-meta{font-size:11px;color:var(--gray);margin-top:1px;}
+.si-badges{display:flex;gap:4px;margin-top:4px;flex-wrap:wrap;}
+.badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.04em;}
+.badge.high{background:#FDE8E6;color:var(--red);}
+.badge.int{background:#FEF3E2;color:var(--amber);}
+.badge.basic{background:#EEE;color:#666;}
+.map-wrap{flex:1;position:relative;}
+#map{position:absolute;top:0;left:0;right:0;bottom:0;}
+.legend{position:absolute;bottom:20px;right:12px;z-index:1000;background:#fff;border:1px solid var(--rule);border-radius:6px;padding:12px 14px;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.legend-title{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
+.legend-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--charcoal);margin-bottom:5px;}
+.ldot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+
+/* Leaflet popup */
+.leaflet-popup-content-wrapper{border-radius:6px;border-top:3px solid var(--teal);box-shadow:0 8px 32px rgba(17,103,130,.18);}
+.leaflet-popup-content{margin:12px 14px;font-family:'DM Sans',sans-serif;min-width:240px;}
+.p-name{font-family:'Raleway',sans-serif;font-size:13px;font-weight:800;color:var(--teal);margin-bottom:2px;}
+.p-addr{font-size:11px;color:var(--gray);margin-bottom:8px;}
+.p-v{background:#F8FBFB;border:1px solid var(--rule);border-radius:4px;padding:7px 9px;margin-bottom:5px;}
+.p-vh{display:flex;align-items:center;gap:6px;margin-bottom:3px;flex-wrap:wrap;}
+.p-code{font-size:10px;font-weight:700;color:var(--teal);letter-spacing:.05em;}
+.p-date{font-size:10px;color:var(--gray);margin-left:auto;}
+.p-desc{font-size:11px;color:var(--charcoal);line-height:1.45;}
+.p-cta{margin-top:8px;padding:7px 9px;background:var(--pale);border-radius:4px;font-size:11px;color:var(--teal);font-weight:600;text-align:center;border:1px solid var(--rule);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- GATE -->
+<div class="screen active" id="screen-gate">
+  <div class="gate-wrap" style="animation:fadeUp .4s ease both">
+    <div class="gate-logo">
+      <div class="gate-logo-mark">CR</div>
+      <div class="gate-logo-text">Ceilings R Us<span>South Florida Compliance Intelligence</span></div>
+    </div>
+    <h2>See What DBPR Found at Restaurants Near You</h2>
+    <p>Enter your details to access our interactive violation map — powered by real Florida DBPR inspection data.</p>
+    <form onsubmit="submitGate(event)">
+      <div class="form-row">
+        <div class="fg"><label>First Name *</label><input type="text" id="g-first" placeholder="First name" required></div>
+        <div class="fg"><label>Last Name *</label><input type="text" id="g-last" placeholder="Last name" required></div>
+      </div>
+      <div class="fg"><label>Work Email *</label><input type="email" id="g-email" placeholder="you@restaurant.com" required></div>
+      <div class="fg"><label>Company / Restaurant *</label><input type="text" id="g-company" placeholder="e.g. Ocean Grill Miami" required></div>
+      <div class="form-row">
+        <div class="fg"><label>Role</label>
+          <select id="g-role"><option value="">Select…</option><option>Owner / Franchise Owner</option><option>General Manager</option><option>Director of Operations</option><option>Facilities Manager</option><option>VP Operations</option><option>Other</option></select>
+        </div>
+        <div class="fg"><label>Locations</label>
+          <select id="g-loc"><option value="">Select…</option><option>1 location</option><option>2–5 locations</option><option>6–15 locations</option><option>16+ locations</option></select>
+        </div>
+      </div>
+      <button type="submit" class="btn-p">Access the Violation Map →</button>
+    </form>
+    <p class="privacy">Your information is only used to provide access to this tool. We never sell or share your data.</p>
+  </div>
+</div>
+
+<!-- ZIP -->
+<div class="screen" id="screen-zip">
+  <div class="zip-card">
+    <div class="zip-icon">📍</div>
+    <h2>Where is your restaurant?</h2>
+    <p>Enter your zip code to see DBPR ceiling and vent violations at nearby restaurants.</p>
+    <div class="zip-row">
+      <input type="text" id="zip-input" placeholder="e.g. 33301" maxlength="5">
+      <button class="btn-zip" onclick="submitZip()">Show Map →</button>
+    </div>
+    <p class="zip-note">Covering Miami-Dade · Broward · Palm Beach</p>
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="screen" id="screen-map">
+  <div class="map-header">
+    <div style="display:flex;align-items:center;gap:14px;">
+      <div class="map-logo">Ceilings R Us <span>Violation Intelligence</span></div>
+      <div class="vcount" id="vcount"><b>—</b> violations found</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <span style="font-size:11px;color:rgba(255,255,255,.4);">Demo data · Real DBPR format</span>
+      <button class="btn-reset" onclick="goZip()">← Change Zip</button>
+    </div>
+  </div>
+  <div class="map-body">
+    <div class="sidebar">
+      <div class="sb-head">
+        <h3>Restaurants with Violations</h3>
+        <p id="sb-sub">Sorted by severity</p>
+      </div>
+      <div class="sb-list" id="sb-list"></div>
+    </div>
+    <div class="map-wrap">
+      <div id="map"></div>
+      <div class="legend">
+        <div class="legend-title">Violation Severity</div>
+        <div class="legend-item"><div class="ldot" style="background:#C0392B"></div>High Priority</div>
+        <div class="legend-item"><div class="ldot" style="background:#D4820A"></div>Intermediate</div>
+        <div class="legend-item"><div class="ldot" style="background:#8C9E9E"></div>Basic</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA=[
+  {
+    "id": 1,
+    "name": "Anglins Beach Cafe",
+    "address": "2 COMMERCIAL BLVD, LAUDERDALE-BY-THE-SEA, FL 33308",
+    "lat": 26.189552,
+    "lng": -80.095379,
+    "totalViolations": 26,
+    "hpViolations": 11,
+    "v36Count": 2,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1601347",
+    "violations": [
+      {
+        "description": "26 violations + ceiling/ventilation issues cited + admin complaint",
+        "severity": "High Priority",
+        "date": "10/13/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (2x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "10/13/2025",
+        "disposition": ""
+      },
+      {
+        "description": "11 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "10/13/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Patrizia'S",
+    "address": "1544 SE 3 CT, DEERFIELD BEACH, FL 33441",
+    "lat": 26.3136642,
+    "lng": -80.085348,
+    "totalViolations": 25,
+    "hpViolations": 4,
+    "v36Count": 4,
+    "disposition": "Emergency order recommended",
+    "priority": "HOT",
+    "license": "1600779",
+    "violations": [
+      {
+        "description": "EMERGENCY CLOSURE + 4x ceiling/ventilation violations (Violation 36)",
+        "severity": "High Priority",
+        "date": "01/20/2026",
+        "disposition": "Emergency order recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (4x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "01/20/2026",
+        "disposition": ""
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/20/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Bkk Thai & Sushi By Cilantro",
+    "address": "1843 S FEDERAL HWY, FORT LAUDERDALE, FL 33316",
+    "lat": 26.0977892,
+    "lng": -80.1370052,
+    "totalViolations": 17,
+    "hpViolations": 6,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600639",
+    "violations": [
+      {
+        "description": "17 violations - worst in period. Repeat admin complaints.",
+        "severity": "High Priority",
+        "date": "08/04/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "6 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/04/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "The Deep Oceanfront Restaurant",
+    "address": "1200 S OCEAN BLVD, POMPANO BEACH, FL 33062",
+    "lat": 26.223712,
+    "lng": -80.09117,
+    "totalViolations": 16,
+    "hpViolations": 2,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "HOT",
+    "license": "1601109",
+    "violations": [
+      {
+        "description": "16 violations including ceiling/ventilation, warning issued",
+        "severity": "Intermediate",
+        "date": "10/27/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "10/27/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "10/27/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Flicker Lite Bar",
+    "address": "1014 N OCEAN DR, HOLLYWOOD, FL 33019",
+    "lat": 26.0202468,
+    "lng": -80.1171178,
+    "totalViolations": 14,
+    "hpViolations": 4,
+    "v36Count": 3,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1600176",
+    "violations": [
+      {
+        "description": "3x ceiling/wall violations + admin complaint recommended",
+        "severity": "High Priority",
+        "date": "07/17/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "07/17/2025",
+        "disposition": ""
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "07/17/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Pomperdale Deli",
+    "address": "3055 E COMMERCIAL BLVD, FORT LAUDERDALE, FL 33308",
+    "lat": 26.1899762,
+    "lng": -80.1052012,
+    "totalViolations": 14,
+    "hpViolations": 6,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "HOT",
+    "license": "1601236",
+    "violations": [
+      {
+        "description": "14 violations + ceiling issue cited - recent warning (Jan 2026)",
+        "severity": "Intermediate",
+        "date": "01/27/2026",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "01/27/2026",
+        "disposition": ""
+      },
+      {
+        "description": "6 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/27/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Georgia Pig",
+    "address": "1285 S SR 7, FORT LAUDERDALE, FL 33317",
+    "lat": 26.102734,
+    "lng": -80.2013557,
+    "totalViolations": 14,
+    "hpViolations": 6,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600178",
+    "violations": [
+      {
+        "description": "14 violations + admin complaint - major facility issues",
+        "severity": "High Priority",
+        "date": "08/11/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "6 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/11/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Garden Restaurant",
+    "address": "4400 N ANDREWS AVE, FORT LAUDERDALE, FL 33309",
+    "lat": 26.2017599,
+    "lng": -80.14919,
+    "totalViolations": 13,
+    "hpViolations": 4,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "HOT",
+    "license": "1600406",
+    "violations": [
+      {
+        "description": "13 violations + ceiling + lighting fixture issues",
+        "severity": "High Priority",
+        "date": "11/03/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "11/03/2025",
+        "disposition": ""
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "11/03/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "The Floridian",
+    "address": "1492 E LAS OLAS BLVD, FORT LAUDERDALE, FL 33301",
+    "lat": 26.119319,
+    "lng": -80.1287317,
+    "totalViolations": 13,
+    "hpViolations": 4,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600518",
+    "violations": [
+      {
+        "description": "Premium Las Olas restaurant - ceiling violation + 13 total",
+        "severity": "Intermediate",
+        "date": "07/22/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "07/22/2025",
+        "disposition": ""
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "07/22/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Brookyln Pizza Lhp",
+    "address": "3650 N FEDERAL HWY STE E, LIGHTHOUSE POINT, FL 33064",
+    "lat": 26.2753,
+    "lng": -80.0855,
+    "totalViolations": 13,
+    "hpViolations": 5,
+    "v36Count": 3,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1601694",
+    "violations": [
+      {
+        "description": "REPEAT violations + ceiling/vent issues + admin complaint \u2014 2nd inspection in 3 months",
+        "severity": "High Priority",
+        "date": "01/13/2026",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "01/13/2026",
+        "disposition": ""
+      },
+      {
+        "description": "5 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/13/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Catfish Deweys",
+    "address": "4003 N ANDREWS AVE, OAKLAND PARK, FL 33309",
+    "lat": 26.1759004,
+    "lng": -80.1468145,
+    "totalViolations": 12,
+    "hpViolations": 3,
+    "v36Count": 5,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1600704",
+    "violations": [
+      {
+        "description": "5x ceiling/wall violations across 2 inspections + admin complaint",
+        "severity": "High Priority",
+        "date": "12/18/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (5x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "12/18/2025",
+        "disposition": ""
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/18/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dania Entertainment Center Llc",
+    "address": "301 E DANIA BEACH BLVD, DANIA, FL 33004",
+    "lat": 26.0533761,
+    "lng": -80.1371882,
+    "totalViolations": 11,
+    "hpViolations": 3,
+    "v36Count": 0,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600774",
+    "violations": [
+      {
+        "description": "Entertainment venue - 11 violations, high-traffic commercial facility",
+        "severity": "Intermediate",
+        "date": "08/15/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/15/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Ft Lauderdale Country Club",
+    "address": "415 COUNTRY CLUB CIR, PLANTATION, FL 33317",
+    "lat": 26.1160068,
+    "lng": -80.2061795,
+    "totalViolations": 10,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600030",
+    "violations": [
+      {
+        "description": "Country club - 10 violations, premium facility needs maintenance",
+        "severity": "Intermediate",
+        "date": "11/18/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "11/18/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Jack'S Diner",
+    "address": "1031 N FEDERAL HWY, HOLLYWOOD, FL 33020",
+    "lat": 26.0201457,
+    "lng": -80.1431355,
+    "totalViolations": 10,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600734",
+    "violations": [
+      {
+        "description": "10 violations + admin complaint + lighting fixture issues",
+        "severity": "High Priority",
+        "date": "07/09/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "07/09/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Jaxson Ice Cream Shop",
+    "address": "128 S FEDERAL HWY, DANIA, FL 33004",
+    "lat": 26.0499591,
+    "lng": -80.1436794,
+    "totalViolations": 9,
+    "hpViolations": 1,
+    "v36Count": 3,
+    "disposition": "Warning Issued",
+    "priority": "HOT",
+    "license": "1600979",
+    "violations": [
+      {
+        "description": "3x ceiling/ventilation violations at iconic local spot",
+        "severity": "Intermediate",
+        "date": "07/29/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "07/29/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "07/29/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Arties Sportsmens Lounge",
+    "address": "2218 N FEDERAL HWY, HOLLYWOOD, FL 33020",
+    "lat": 26.0314145,
+    "lng": -80.143373,
+    "totalViolations": 9,
+    "hpViolations": 4,
+    "v36Count": 1,
+    "disposition": "Emergency order recommended",
+    "priority": "HOT",
+    "license": "1600265",
+    "violations": [
+      {
+        "description": "EMERGENCY CLOSURE + ceiling/surface violations",
+        "severity": "High Priority",
+        "date": "12/01/2025",
+        "disposition": "Emergency order recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "12/01/2025",
+        "disposition": ""
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/01/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Tap 42",
+    "address": "1411 S ANDREWS AVE, FORT LAUDERDALE, FL 33316",
+    "lat": 26.1043241,
+    "lng": -80.1428949,
+    "totalViolations": 8,
+    "hpViolations": 3,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600259",
+    "violations": [
+      {
+        "description": "Multi-location brand (Tap 42 has other FL locations) - 3 admin complaints",
+        "severity": "High Priority",
+        "date": "12/02/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/02/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Dennys Rest 9589",
+    "address": "5000 N FEDERAL HWY, FORT LAUDERDALE, FL 33308",
+    "lat": 26.1900415,
+    "lng": -80.1142321,
+    "totalViolations": 8,
+    "hpViolations": 2,
+    "v36Count": 2,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600796",
+    "violations": [
+      {
+        "description": "Denny's franchise #2 - ceiling + lighting violations. Pitch franchise ops.",
+        "severity": "High Priority",
+        "date": "07/16/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (2x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "07/16/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "07/16/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Charm City Burger Co",
+    "address": "1136 E HILLSBORO BLVD, DEERFIELD BEACH, FL 33441",
+    "lat": 26.3183708,
+    "lng": -80.0926074,
+    "totalViolations": 8,
+    "hpViolations": 1,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600346",
+    "violations": [
+      {
+        "description": "Ceiling violation + warning issued - popular local restaurant",
+        "severity": "Intermediate",
+        "date": "08/15/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "08/15/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/15/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Lesters Diner",
+    "address": "250 SW 24 ST, FORT LAUDERDALE, FL 33315",
+    "lat": 26.0924961,
+    "lng": -80.1634389,
+    "totalViolations": 8,
+    "hpViolations": 3,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600724",
+    "violations": [
+      {
+        "description": "Lester's #1 - admin complaint. Owner also has Lester's #2 (Margate).",
+        "severity": "High Priority",
+        "date": "09/03/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "09/03/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Happy House",
+    "address": "4089 N ANDREWS AVE, FORT LAUDERDALE, FL 33309",
+    "lat": 26.2017599,
+    "lng": -80.14919,
+    "totalViolations": 7,
+    "hpViolations": 0,
+    "v36Count": 0,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600066",
+    "violations": [
+      {
+        "description": "Repeat high-violation inspections (13, 8, 7) - systemic maintenance gaps",
+        "severity": "Basic",
+        "date": "12/03/2025",
+        "disposition": "Inspection Completed"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Hillsboro Club Dining Room",
+    "address": "901 HILLSBORO MILE (A1A), HILLSBORO BEACH, FL 33062",
+    "lat": 26.2833333,
+    "lng": -80.079797,
+    "totalViolations": 7,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600020",
+    "violations": [
+      {
+        "description": "Private club with admin complaint - reputation-sensitive, premium client",
+        "severity": "High Priority",
+        "date": "01/23/2026",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/23/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Lesters Diner Ii",
+    "address": "4701 COCONUT CREEK PKWY, MARGATE, FL 33063",
+    "lat": 26.2449212,
+    "lng": -80.1994218,
+    "totalViolations": 7,
+    "hpViolations": 4,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1601025",
+    "violations": [
+      {
+        "description": "Lester's #2 - ALSO admin complaint. Both locations = portfolio pitch.",
+        "severity": "High Priority",
+        "date": "10/20/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "4 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "10/20/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Bayview Diner",
+    "address": "2712 E OAKLAND PARK BLVD, FORT LAUDERDALE, FL 33306",
+    "lat": 26.1671621,
+    "lng": -80.1108833,
+    "totalViolations": 7,
+    "hpViolations": 1,
+    "v36Count": 2,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1601239",
+    "violations": [
+      {
+        "description": "Repeat ceiling violations across inspections",
+        "severity": "Basic",
+        "date": "12/30/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (2x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "12/30/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/30/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Coral Ridge Yacht Club",
+    "address": "2800 YACHT CLUB DR, FORT LAUDERDALE, FL 33304",
+    "lat": 26.1406779,
+    "lng": -80.1087946,
+    "totalViolations": 7,
+    "hpViolations": 3,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600693",
+    "violations": [
+      {
+        "description": "Yacht club - admin complaint. High-end facility maintenance contract opportunity.",
+        "severity": "High Priority",
+        "date": "08/22/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/22/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Jacaranda Country Club",
+    "address": "9200 W BROWARD BLVD, PLANTATION, FL 33324",
+    "lat": 26.1127236,
+    "lng": -80.269658,
+    "totalViolations": 7,
+    "hpViolations": 1,
+    "v36Count": 0,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600808",
+    "violations": [
+      {
+        "description": "Country club - facility maintenance issues, premium client opportunity",
+        "severity": "Intermediate",
+        "date": "12/02/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/02/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Tarks Of Dania Beach",
+    "address": "1317 S FEDERAL HWY, DANIA BEACH, FL 33004",
+    "lat": 26.0353052,
+    "lng": -80.1432172,
+    "totalViolations": 7,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1601438",
+    "violations": [
+      {
+        "description": "Recent warning (Feb 2026) - admin complaint history. Timely outreach.",
+        "severity": "Intermediate",
+        "date": "02/09/2026",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "02/09/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "The Playhouse",
+    "address": "5775 HALLANDALE BEACH BLVD, WEST HOLLYWOOD, FL 33023",
+    "lat": 25.9865645,
+    "lng": -80.1205917,
+    "totalViolations": 7,
+    "hpViolations": 2,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "MONITOR",
+    "license": "1600321",
+    "violations": [
+      {
+        "description": "Ceiling violation flagged - entertainment/dining venue",
+        "severity": "Basic",
+        "date": "09/16/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "09/16/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "09/16/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Benihana Of Tokyo Steak House",
+    "address": "4343 W TRADEWINDS AVE, LAUDERDALE-BY-THE-SEA, FL 33308",
+    "lat": 26.1924,
+    "lng": -80.1017,
+    "totalViolations": 7,
+    "hpViolations": 2,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600296",
+    "violations": [
+      {
+        "description": "7 violations + ceiling issue at high-profile chain location",
+        "severity": "Intermediate",
+        "date": "12/09/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "12/09/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/09/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "The Deck Restaurant",
+    "address": "619 N ATLANTIC BLVD, FORT LAUDERDALE, FL 33304",
+    "lat": 26.1322191,
+    "lng": -80.1031354,
+    "totalViolations": 6,
+    "hpViolations": 1,
+    "v36Count": 1,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1600737",
+    "violations": [
+      {
+        "description": "Beachfront restaurant - ceiling violation + admin complaint",
+        "severity": "High Priority",
+        "date": "09/11/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "09/11/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "09/11/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "The Club At Emerald Hills",
+    "address": "4100 N HILLS DR, HOLLYWOOD, FL 33021",
+    "lat": 26.0428381,
+    "lng": -80.185343,
+    "totalViolations": 6,
+    "hpViolations": 2,
+    "v36Count": 1,
+    "disposition": "Administrative complaint recommended",
+    "priority": "HOT",
+    "license": "1601642",
+    "violations": [
+      {
+        "description": "Country club - ceiling violation + admin complaint (Feb 2026)",
+        "severity": "High Priority",
+        "date": "02/10/2026",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "02/10/2026",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "02/10/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "International House Of Pancakes 36-08",
+    "address": "2754 HOLLYWOOD BLVD, HOLLYWOOD, FL 33020",
+    "lat": 26.0111683,
+    "lng": -80.1619255,
+    "totalViolations": 6,
+    "hpViolations": 3,
+    "v36Count": 1,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600499",
+    "violations": [
+      {
+        "description": "IHOP franchise - ceiling violation + warning. Multi-location opportunity.",
+        "severity": "Intermediate",
+        "date": "08/11/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "08/11/2025",
+        "disposition": ""
+      },
+      {
+        "description": "3 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/11/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Coral Ridge Country Club",
+    "address": "3801 BAYVIEW DR, FORT LAUDERDALE, FL 33308",
+    "lat": 26.179808,
+    "lng": -80.1141088,
+    "totalViolations": 6,
+    "hpViolations": 1,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600954",
+    "violations": [
+      {
+        "description": "Country club - ceiling violation. Premium facility client.",
+        "severity": "Basic",
+        "date": "09/24/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "09/24/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "09/24/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Maryland Fried Chicken",
+    "address": "1821 E SAMPLE RD, POMPANO BEACH, FL 33064",
+    "lat": 26.2756054,
+    "lng": -80.0990584,
+    "totalViolations": 6,
+    "hpViolations": 0,
+    "v36Count": 3,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1601261",
+    "violations": [
+      {
+        "description": "Repeat Violation 36 across inspections - systematic ceiling issue",
+        "severity": "Basic",
+        "date": "08/11/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "08/11/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Rickeys Restaurant And Sports Bar",
+    "address": "4799 HOLLYWOOD BLVD, HOLLYWOOD, FL 33021",
+    "lat": 26.010546,
+    "lng": -80.191506,
+    "totalViolations": 6,
+    "hpViolations": 1,
+    "v36Count": 0,
+    "disposition": "Inspection Completed",
+    "priority": "MONITOR",
+    "license": "1600889",
+    "violations": [
+      {
+        "description": "Sports bar - facility surface issues, ventilation opportunity",
+        "severity": "Basic",
+        "date": "09/23/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "09/23/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Lake Mar Country Club Dining",
+    "address": "500 NW 127 AVE, PLANTATION, FL 33325",
+    "lat": 26.1249075,
+    "lng": -80.3175654,
+    "totalViolations": 6,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600102",
+    "violations": [
+      {
+        "description": "Country club - admin complaint + surface cleanliness issues",
+        "severity": "High Priority",
+        "date": "11/04/2025",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "11/04/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Gerd Mueller'S Ambry",
+    "address": "3016 E COMMERCIAL BLVD, FORT LAUDERDALE, FL 33308",
+    "lat": 26.1896578,
+    "lng": -80.1065684,
+    "totalViolations": 5,
+    "hpViolations": 1,
+    "v36Count": 2,
+    "disposition": "Inspection Completed",
+    "priority": "HOT",
+    "license": "1600457",
+    "violations": [
+      {
+        "description": "Repeat Violation 36 across inspections - systematic ceiling issue",
+        "severity": "Basic",
+        "date": "01/30/2026",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (2x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "01/30/2026",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/30/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Las Olas Co - Riverside Hotel",
+    "address": "620 E LAS OLAS BLVD, FORT LAUDERDALE, FL 33301",
+    "lat": 26.1191271,
+    "lng": -80.1368587,
+    "totalViolations": 5,
+    "hpViolations": 2,
+    "v36Count": 0,
+    "disposition": "Administrative complaint recommended",
+    "priority": "WARM",
+    "license": "1600225",
+    "violations": [
+      {
+        "description": "Premium Las Olas hotel restaurant - repeat admin complaints",
+        "severity": "High Priority",
+        "date": "01/28/2026",
+        "disposition": "Administrative complaint recommended"
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "01/28/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Westin Fort Lauderdale Beach Resort",
+    "address": "303 N FORT LAUDERDALE BEACH BLVD, FORT LAUDERDALE, FL 33304",
+    "lat": 26.1262175,
+    "lng": -80.1039368,
+    "totalViolations": 5,
+    "hpViolations": 2,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600067",
+    "violations": [
+      {
+        "description": "Major resort hotel - ceiling violation. Marriott property = corporate facility mgmt.",
+        "severity": "Basic",
+        "date": "10/09/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "10/09/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "10/09/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Mcdonalds #904 Oakland Park",
+    "address": "265 W OAKLAND PARK BLVD, OAKLAND PARK, FL 33311",
+    "lat": 26.1668203,
+    "lng": -80.1488739,
+    "totalViolations": 5,
+    "hpViolations": 1,
+    "v36Count": 0,
+    "disposition": "Inspection Completed",
+    "priority": "MONITOR",
+    "license": "1600369",
+    "violations": [
+      {
+        "description": "McDonald's franchise #2 - maintenance violations",
+        "severity": "Basic",
+        "date": "08/25/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/25/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Tropical Acres Steak House",
+    "address": "2500 GRIFFIN RD, FORT LAUDERDALE, FL 33312",
+    "lat": 26.0644,
+    "lng": -80.1717,
+    "totalViolations": 5,
+    "hpViolations": 1,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600208",
+    "violations": [
+      {
+        "description": "5 violations including V36 ceiling \u2014 established steakhouse, reputation-sensitive",
+        "severity": "Basic",
+        "date": "12/16/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "12/16/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/16/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Denny'S Of Hallandale 7454",
+    "address": "1025 W HALLANDALE BEACH BLVD, HALLANDALE, FL 33009",
+    "lat": 25.9851969,
+    "lng": -80.1629902,
+    "totalViolations": 4,
+    "hpViolations": 0,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600213",
+    "violations": [
+      {
+        "description": "Denny's franchise - ceiling violation + multi-location pitch opportunity",
+        "severity": "Basic",
+        "date": "02/04/2026",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "02/04/2026",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Mcdonalds #1585",
+    "address": "2025 E ATLANTIC BLVD, POMPANO BEACH, FL 33060",
+    "lat": 26.231605,
+    "lng": -80.1035454,
+    "totalViolations": 4,
+    "hpViolations": 1,
+    "v36Count": 1,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600053",
+    "violations": [
+      {
+        "description": "McDonald's franchise - ceiling violation. Multiple McDonald's in area.",
+        "severity": "Basic",
+        "date": "08/20/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (1x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "Intermediate",
+        "date": "08/20/2025",
+        "disposition": ""
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "08/20/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Oriole Golf Club",
+    "address": "8000 W MARGATE BLVD, MARGATE, FL 33063",
+    "lat": 26.24565,
+    "lng": -80.2269692,
+    "totalViolations": 3,
+    "hpViolations": 2,
+    "v36Count": 3,
+    "disposition": "Warning Issued",
+    "priority": "WARM",
+    "license": "1600320",
+    "violations": [
+      {
+        "description": "Golf club - ceiling/ventilation violations. Premium facility client.",
+        "severity": "Intermediate",
+        "date": "11/04/2025",
+        "disposition": "Warning Issued"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "11/04/2025",
+        "disposition": ""
+      },
+      {
+        "description": "2 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "11/04/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Red Lobster #0029",
+    "address": "5950 N FEDERAL HWY, FORT LAUDERDALE, FL 33308",
+    "lat": 26.2016468,
+    "lng": -80.109469,
+    "totalViolations": 3,
+    "hpViolations": 0,
+    "v36Count": 3,
+    "disposition": "Inspection Completed",
+    "priority": "WARM",
+    "license": "1600687",
+    "violations": [
+      {
+        "description": "Red Lobster - ceiling violations. National chain = facility mgmt dept.",
+        "severity": "Basic",
+        "date": "10/06/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "Violation 36 \u2014 Ceiling/ventilation conditions not met (3x cited). Includes ceiling tiles, vent covers, HVAC systems, or hood exhaust components.",
+        "severity": "High Priority",
+        "date": "10/06/2025",
+        "disposition": ""
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Mcgowen'S",
+    "address": "310 N BROADWALK, HOLLYWOOD, FL 33019",
+    "lat": 26.0207524,
+    "lng": -80.1151359,
+    "totalViolations": 3,
+    "hpViolations": 1,
+    "v36Count": 0,
+    "disposition": "Inspection Completed",
+    "priority": "MONITOR",
+    "license": "1600237",
+    "violations": [
+      {
+        "description": "Broadwalk restaurant - surface cleanliness issues",
+        "severity": "Basic",
+        "date": "12/12/2025",
+        "disposition": "Inspection Completed"
+      },
+      {
+        "description": "1 high-priority violation(s) cited \u2014 items requiring immediate corrective action per DBPR standards.",
+        "severity": "High Priority",
+        "date": "12/12/2025",
+        "disposition": ""
+      }
+    ]
+  }
+];
+
+let map=null,markers=[];
+
+function sc(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
+function sev(s){return s==='High Priority'?'high':s==='Intermediate'?'int':'basic';}
+function col(s){return s==='High Priority'?'#C0392B':s==='Intermediate'?'#D4820A':'#8C9E9E';}
+function worst(vs){if(vs.some(v=>v.severity==='High Priority'))return 'High Priority';if(vs.some(v=>v.severity==='Intermediate'))return 'Intermediate';return 'Basic';}
+function fdate(d){
+  if(!d)return '';
+  if(d.includes('/')){var p=d.split('/');return new Date(parseInt(p[2]),parseInt(p[0])-1,parseInt(p[1])).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});}
+  return new Date(d+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+
+function submitGate(e){
+  e.preventDefault();
+  // Send lead data to Zapier
+  var ZAPIER_WEBHOOK='https://hooks.zapier.com/hooks/catch/24960427/uph7yj2/';
+  var leadData={
+    name:document.getElementById('g-first').value.trim()+' '+document.getElementById('g-last').value.trim(),
+    first_name:document.getElementById('g-first').value.trim(),
+    last_name:document.getElementById('g-last').value.trim(),
+    email:document.getElementById('g-email').value.trim(),
+    company:document.getElementById('g-company').value.trim(),
+    role:document.getElementById('g-role').value,
+    locations:document.getElementById('g-loc').value,
+    lead_source:'Violation Map',
+    submitted_at:new Date().toISOString()
+  };
+  var formBody=Object.keys(leadData).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(leadData[k]);}).join('&');
+  fetch(ZAPIER_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:formBody,mode:'no-cors'}).catch(function(){});
+  sc('screen-zip');
+  setTimeout(()=>document.getElementById('zip-input').focus(),100);
+}
+
+function submitZip(){
+  const z=document.getElementById('zip-input').value.trim();
+  if(!/^\d{5}$/.test(z)){alert('Please enter a valid 5-digit zip code.');return;}
+  sc('screen-map');
+  setTimeout(()=>initMap(z),100);
+}
+
+function goZip(){sc('screen-zip');if(map){map.remove();map=null;markers=[];}}
+
+function initMap(zip){
+  if(map){map.remove();map=null;}
+  
+  // Initialize map with Broward center, then geocode
+  map=L.map('map',{zoomControl:true}).setView([26.1224,-80.1373],11);
+  
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    attribution:'© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+    maxZoom:19
+  }).addTo(map);
+
+  const total=DATA.reduce((s,r)=>s+r.totalViolations,0);
+  document.getElementById('vcount').innerHTML=`<b>${total}</b> violations at ${DATA.length} restaurants near ${zip}`;
+  document.getElementById('sb-sub').textContent=`${DATA.length} restaurants · ${total} total violations`;
+
+  const sorted=[...DATA].sort((a,b)=>{
+    const score=r=>r.hpViolations*3+r.totalViolations;
+    return score(b)-score(a);
+  });
+
+  buildSidebar(sorted);
+
+  sorted.forEach(r=>{
+    const w=worst(r.violations);
+    const m=L.circleMarker([r.lat,r.lng],{
+      radius:7+Math.min(r.totalViolations,12),
+      fillColor:col(w),color:'#fff',weight:2,opacity:1,fillOpacity:0.9
+    }).addTo(map);
+
+    m.bindPopup(popup(r),{maxWidth:290,minWidth:250});
+    m.on('click',()=>highlightSI(r.id));
+    markers.push({id:r.id,m,lat:r.lat,lng:r.lng});
+  });
+
+  // Geocode zip to center map
+  fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=US&format=json&limit=1`)
+    .then(r=>r.json())
+    .then(d=>{if(d&&d[0])map.setView([parseFloat(d[0].lat),parseFloat(d[0].lon)],11);})
+    .catch(()=>{});
+}
+
+function popup(r){
+  const vhtml=r.violations.map(v=>{
+    const dateStr=v.date?fdate(v.date):'';
+    return '<div class="p-v"><div class="p-vh"><span class="badge '+sev(v.severity)+'">'+v.severity+'</span>'+(dateStr?'<span class="p-date">'+dateStr+'</span>':'')+'</div><div class="p-desc">'+v.description+'</div></div>';
+  }).join('');
+  const dispBadge=r.disposition?'<div style="margin:6px 0;padding:4px 8px;background:#FDE8E6;border-radius:4px;font-size:10px;font-weight:600;color:#C0392B;">'+r.disposition+'</div>':'';
+  const stats='<div style="display:flex;gap:8px;margin:6px 0;font-size:11px;"><span><b>'+r.totalViolations+'</b> total</span><span><b>'+r.hpViolations+'</b> high priority</span>'+(r.v36Count?'<span><b>'+r.v36Count+'</b> ceiling/vent</span>':'')+'</div>';
+  return '<div class="p-name">'+r.name+'</div><div class="p-addr">'+r.address+'</div>'+dispBadge+stats+vhtml+'<div class="p-cta">Could this happen at your location? Ceilings R Us can help.</div>';
+}
+
+function buildSidebar(sorted){
+  document.getElementById('sb-list').innerHTML=sorted.map(r=>{
+    const w=worst(r.violations);
+    const badges=[...new Set(r.violations.map(v=>v.severity))].map(s=>'<span class="badge '+sev(s)+'">'+s+'</span>').join('');
+    const city=(r.address.split(',')[1]||'').trim();
+    return '<div class="si" id="si-'+r.id+'" onclick="focusMarker('+r.id+')"><div class="si-dot '+sev(w)+'"></div><div><div class="si-name">'+r.name+'</div><div class="si-meta">'+r.totalViolations+' violations · '+city+'</div><div class="si-badges">'+badges+'</div></div></div>';
+  }).join('');
+}
+
+function focusMarker(id){
+  const x=markers.find(m=>m.id===id);
+  if(x){map.setView([x.lat,x.lng],14,{animate:true});x.m.openPopup();highlightSI(id);}
+}
+
+function highlightSI(id){
+  document.querySelectorAll('.si').forEach(e=>e.classList.remove('active'));
+  const el=document.getElementById('si-'+id);
+  if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  document.addEventListener('keypress',e=>{if(e.key==='Enter'&&document.getElementById('screen-zip').classList.contains('active'))submitZip();});
+});
+</script>
+</body>
+</html>
