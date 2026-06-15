@@ -55,7 +55,7 @@ GEOCACHE_PATH = os.path.join(HERE, "geocode_cache.json")
 DBPR_EXTRACT_URL = "https://www2.myfloridalicense.com/sto/file_download/extracts/{n}fdinspi.csv"
 DISTRICTS = [1, 2]  # 1 = Miami-Dade, 2 = Broward + Palm Beach
 
-TARGET_COUNTIES = {"BROWARD", "MIAMI-DADE", "MIAMI DADE", "DADE", "PALM BEACH"}
+TARGET_COUNTIES = {"BROWARD", "MIAMI-DADE", "MIAMI DADE", "DADE", "PALM BEACH", "MONROE"}
 TARGET_ZIP_PREFIXES = ("330", "331", "332", "333", "334")
 
 # The ceiling/wall/vent code in the numbered DBPR scheme.
@@ -233,11 +233,15 @@ def aggregate(rows: list[dict], cols: dict) -> list[dict]:
         rec = by_license.get(lic)
         if rec is None or (d and rec["_date"] and d > rec["_date"]) or (rec and rec["_date"] is None and d):
             # keep the most recent inspection per establishment
+            county = g("county").title()
+            if county.upper() in ("DADE", "MIAMI DADE"):
+                county = "Miami-Dade"
             rec = {
                 "name": g("name").title(),
                 "address": ", ".join(p for p in [g("address"), g("city").title(),
                                                   f"FL {zipcode}".strip()] if p),
                 "city": g("city").title(),
+                "county": county,
                 "zip": zipcode,
                 "license": g("license"),
                 "totalViolations": total,
@@ -276,6 +280,7 @@ def aggregate(rows: list[dict], cols: dict) -> list[dict]:
             "id": i,
             "name": rec["name"],
             "address": rec["address"],
+            "county": rec["county"],
             "lat": None,
             "lng": None,
             "totalViolations": rec["totalViolations"],
@@ -392,7 +397,7 @@ def main() -> int:
     out = {
         "updated": date.today().isoformat(),
         "source": "Florida DBPR, Division of Hotels & Restaurants — public inspection extracts (Districts 1 & 2)",
-        "coverage": ["Miami-Dade", "Broward", "Palm Beach"],
+        "coverage": ["Miami-Dade", "Broward", "Palm Beach", "Monroe"],
         "filter": "Inspections citing Violation 36 — floors/walls/ceilings/attached equipment not "
                   "properly constructed or clean, or rooms/equipment not properly vented.",
         "count": len(records),

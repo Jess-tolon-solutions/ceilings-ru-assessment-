@@ -159,6 +159,7 @@ body{height:100%;font-family:'DM Sans',sans-serif;background:#F5F3EE;color:#1A2E
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
       <span id="data-updated" style="font-size:11px;color:rgba(255,255,255,.4);">Live DBPR data · South Florida</span>
+      <button class="btn-reset" onclick="showAll()">🗺 Show all coverage</button>
       <button class="btn-reset" onclick="goZip()">← Change Zip</button>
     </div>
   </div>
@@ -1574,7 +1575,7 @@ let DATA=[
   }
 ];
 
-let map=null,markers=[];
+let map=null,markers=[],coverageBounds=null,youMarker=null;
 
 function sc(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');}
 function sev(s){return s==='High Priority'?'high':s==='Intermediate'?'int':'basic';}
@@ -1628,7 +1629,7 @@ function initMap(zip){
   }).addTo(map);
 
   const total=DATA.reduce((s,r)=>s+r.totalViolations,0);
-  document.getElementById('vcount').innerHTML=`<b>${total}</b> violations at ${DATA.length} restaurants near ${zip}`;
+  document.getElementById('vcount').innerHTML=`<b>${total}</b> violations across ${DATA.length} restaurants · Miami-Dade · Broward · Palm Beach · Monroe`;
   document.getElementById('sb-sub').textContent=`${DATA.length} restaurants · ${total} total violations`;
 
   const sorted=[...DATA].sort((a,b)=>{
@@ -1650,12 +1651,30 @@ function initMap(zip){
     markers.push({id:r.id,m,lat:r.lat,lng:r.lng});
   });
 
-  // Geocode zip to center map
+  // Default to the full coverage footprint (Palm Beach down through the Keys),
+  // so every county is visible — not just the area around the entered zip.
+  if(markers.length){
+    coverageBounds=L.latLngBounds(markers.map(m=>[m.lat,m.lng]));
+    map.fitBounds(coverageBounds.pad(0.06));
+  }
+
+  // Geocode the zip and drop a "you are here" pin + gently focus that area,
+  // but stay zoomed out enough that neighboring counties' pins remain visible.
   fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=US&format=json&limit=1`)
     .then(r=>r.json())
-    .then(d=>{if(d&&d[0])map.setView([parseFloat(d[0].lat),parseFloat(d[0].lon)],11);})
+    .then(d=>{
+      if(d&&d[0]){
+        const ll=[parseFloat(d[0].lat),parseFloat(d[0].lon)];
+        if(youMarker)map.removeLayer(youMarker);
+        youMarker=L.marker(ll).addTo(map).bindPopup('Your area');
+        map.setView(ll,10);
+      }
+    })
     .catch(()=>{});
 }
+
+// Reset the map to show the entire coverage area.
+function showAll(){if(map&&coverageBounds)map.fitBounds(coverageBounds.pad(0.06));}
 
 function popup(r){
   const vhtml=r.violations.map(v=>{
