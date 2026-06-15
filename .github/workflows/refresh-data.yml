@@ -1,0 +1,40 @@
+name: Refresh DBPR violation data
+
+# Regenerates data.json from the live FL DBPR inspection extracts so the
+# violation map always reflects recent public records.
+on:
+  schedule:
+    - cron: "0 8 * * 1"   # every Monday 08:00 UTC
+  workflow_dispatch: {}    # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-dbpr-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh data.json from DBPR
+        run: python3 scripts/refresh_dbpr_data.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "ceilings-ru-bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain data.json scripts/geocode_cache.json)" ]; then
+            git add data.json scripts/geocode_cache.json
+            git commit -m "data: refresh DBPR violations ($(date -u +%Y-%m-%d))"
+            git push
+          else
+            echo "No data change — nothing to commit."
+          fi
