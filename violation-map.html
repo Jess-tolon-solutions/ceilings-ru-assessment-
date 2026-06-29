@@ -1706,11 +1706,23 @@ function highlightSI(id){
   if(el){el.classList.add('active');el.scrollIntoView({behavior:'smooth',block:'nearest'});}
 }
 
-// Fetch the live dataset produced by the DBPR refresh pipeline. Falls back to the
-// inline snapshot above if data.json is missing or the page is opened from file://.
-function loadLiveData(){
-  return fetch('data.json',{cache:'no-store'})
+// Fetch the live dataset produced by the DBPR refresh pipeline. Tries the
+// same-folder copy first, then the always-current GitHub mirror (refreshed every
+// Monday by the Action), and finally keeps the inline snapshot above if both fail
+// or the page is opened from file://.
+var DATA_SOURCES=[
+  'data.json',
+  'https://raw.githubusercontent.com/Jess-tolon-solutions/ceilings-ru-assessment-/main/data.json'
+];
+function fetchFirst(urls,i){
+  i=i||0;
+  if(i>=urls.length)return Promise.reject();
+  return fetch(urls[i],{cache:'no-store'})
     .then(r=>r.ok?r.json():Promise.reject())
+    .catch(function(){return fetchFirst(urls,i+1);});
+}
+function loadLiveData(){
+  return fetchFirst(DATA_SOURCES)
     .then(j=>{
       var recs=Array.isArray(j)?j:(j&&j.restaurants);
       if(recs&&recs.length){DATA=recs;}
