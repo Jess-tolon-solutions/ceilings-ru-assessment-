@@ -1,0 +1,290 @@
+<!--
+  CEILINGS R US — "Free Compliance Tools" Homepage Section  (3-CARD VERSION)
+  Replaces the previous 2-card block.
+  Changes from the original:
+    1. Grid is now 3 columns (Assessment · Violation Map · Real Violations)
+    2. Card 1 link fixed: /facility-asse  ->  /facility-assessment/
+    3. New Card 3 added, linking to the (already live) /real-violations page
+  Paste this whole block where the old one is (WPCode HTML snippet or page Code Editor).
+-->
+
+<style>
+.cru-tools-section {
+  background: #f4f8f9;
+  padding: 72px 20px;
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.cru-tools-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.cru-tools-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.cru-tools-eyebrow {
+  display: inline-block;
+  background: #116782;
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+.cru-tools-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f2d36;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+.cru-tools-header p {
+  font-size: 1rem;
+  color: #5a7580;
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.cru-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 950px) {
+  .cru-tools-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+  .cru-tools-header h2 { font-size: 1.5rem; }
+}
+.cru-tool-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(17,103,130,0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.cru-tool-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(17,103,130,0.18);
+}
+.cru-tool-card-image {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+.cru-tool-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.cru-tool-card:hover .cru-tool-card-image img {
+  transform: scale(1.04);
+}
+.cru-tool-card-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #5eff00;
+  color: #0f2d36;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+.cru-tool-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, rgba(13,82,105,0.7), transparent);
+}
+.cru-tool-card-body {
+  padding: 24px 26px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cru-tool-card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.cru-tool-card-body h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f2d36;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+.cru-tool-card-body p {
+  font-size: 0.88rem;
+  color: #5a7580;
+  line-height: 1.6;
+  margin: 0 0 20px;
+  flex: 1;
+}
+.cru-tool-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cru-tool-features li {
+  font-size: 0.82rem;
+  color: #3a6370;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cru-tool-features li::before {
+  content: '✓';
+  color: #116782;
+  font-weight: 800;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.cru-tool-btn {
+  display: block;
+  text-align: center;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+.cru-tool-btn-primary {
+  background: #116782;
+  color: white;
+}
+.cru-tool-btn-primary:hover {
+  background: #0d5269;
+  color: white;
+  text-decoration: none;
+}
+.cru-tool-btn-secondary {
+  background: #5eff00;
+  color: #0f2d36;
+}
+.cru-tool-btn-secondary:hover {
+  background: #4acc00;
+  color: #0f2d36;
+  text-decoration: none;
+}
+.cru-tools-footer {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 0.85rem;
+  color: #5a7580;
+}
+.cru-tools-footer strong {
+  color: #116782;
+}
+</style>
+
+<section class="cru-tools-section">
+  <div class="cru-tools-inner">
+
+    <div class="cru-tools-header">
+      <div class="cru-tools-eyebrow">Free Compliance Tools</div>
+      <h2>Know Where You Stand Before the Inspector Does</h2>
+      <p>These free tools show you exactly what inspectors are flagging in South Florida — and how your facility compares.</p>
+    </div>
+
+    <div class="cru-tools-grid">
+
+      <!-- CARD 1: Facility Assessment -->
+      <div class="cru-tool-card">
+        <div class="cru-tool-card-image">
+          <img
+            src="https://ceilingsrus.net/wp-content/uploads/2025/12/Whisk_ccedf41d53195e4b5634758c9e87b128dr.jpeg"
+            alt="Commercial kitchen ceiling with visible vent and tile"
+            onerror="this.style.background='#116782';this.style.minHeight='210px'"
+          >
+          <div class="cru-tool-card-badge">3 Min Assessment</div>
+          <div class="cru-tool-card-overlay"></div>
+        </div>
+        <div class="cru-tool-card-body">
+          <div class="cru-tool-card-icon">📋</div>
+          <h3>Facility Compliance Self-Assessment</h3>
+          <p>Answer 15 questions about your ceilings, vents, hood, and maintenance history. Get an instant risk score and personalized recommendations — before your next DBPR visit.</p>
+          <ul class="cru-tool-features">
+            <li>Instant compliance risk score (0–100)</li>
+            <li>Category breakdown across 5 inspection areas</li>
+            <li>Recommended cleaning frequency for your facility</li>
+            <li>Downloadable PDF report</li>
+          </ul>
+          <a href="https://ceilingsrus.net/facility-assessment/" class="cru-tool-btn cru-tool-btn-primary">Take the Free Assessment →</a>
+        </div>
+      </div>
+
+      <!-- CARD 2: Violation Map -->
+      <div class="cru-tool-card">
+        <div class="cru-tool-card-image">
+          <img
+            src="https://ceilingsrus.net/wp-content/uploads/2026/03/Screenshot-2026-03-19-at-12.11.19-PM.png"
+            alt="South Florida map with inspection violation pins"
+            onerror="this.style.background='#118484';this.style.minHeight='210px'"
+          >
+          <div class="cru-tool-card-badge">Live Data</div>
+          <div class="cru-tool-card-overlay"></div>
+        </div>
+        <div class="cru-tool-card-body">
+          <div class="cru-tool-card-icon">📍</div>
+          <h3>South Florida DBPR Violation Map</h3>
+          <p>See ceiling and vent violations flagged by health inspectors in your zip code. Real inspection data from Miami-Dade, Broward, Palm Beach, and Monroe — refreshed every week.</p>
+          <ul class="cru-tool-features">
+            <li>Filter by zip code or county</li>
+            <li>Color-coded by violation severity</li>
+            <li>See exactly which violation codes were cited</li>
+            <li>Identify patterns in your area</li>
+          </ul>
+          <a href="https://ceilingsrus.net/violation-map/" class="cru-tool-btn cru-tool-btn-secondary">View the Violation Map →</a>
+        </div>
+      </div>
+
+      <!-- CARD 3: Real Violations / What an Inspector Sees -->
+      <div class="cru-tool-card">
+        <div class="cru-tool-card-image">
+          <img
+            src="https://ceilingsrus.net/wp-content/uploads/2026/05/EE86FE32-7122-49E1-A7E8-F48048E49494_1_105_c.jpeg"
+            alt="Water-damaged commercial kitchen ceiling tiles"
+            onerror="this.style.background='#0d5269';this.style.minHeight='210px'"
+          >
+          <div class="cru-tool-card-badge">Real Photos</div>
+          <div class="cru-tool-card-overlay"></div>
+        </div>
+        <div class="cru-tool-card-body">
+          <div class="cru-tool-card-icon">🔍</div>
+          <h3>What an Inspector Sees</h3>
+          <p>Real photos of ceiling and vent problems from South Florida kitchens. Flip each one to reveal how inspectors score it, the code they cite, and how fast it can shut you down.</p>
+          <ul class="cru-tool-features">
+            <li>6 real-world violation types</li>
+            <li>Inspector score &amp; violation code for each</li>
+            <li>Estimated shutdown-risk timeline</li>
+            <li>See your ceiling the way DBPR does</li>
+          </ul>
+          <a href="https://ceilingsrus.net/real-violations/" class="cru-tool-btn cru-tool-btn-primary">See Real Violations →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="cru-tools-footer">
+      All three tools are completely free. No sales pitch — just the data.<br>
+      Questions? Call Us: <strong>(954) 452-0004</strong>
+    </p>
+
+  </div>
+</section>
