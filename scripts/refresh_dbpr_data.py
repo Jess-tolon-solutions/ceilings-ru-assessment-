@@ -41,7 +41,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, timedelta
 
 # --------------------------------------------------------------------------- #
 # Config
@@ -66,11 +66,12 @@ CEILING_VENT_LABEL = (
     "(ceiling tiles, vent covers, exhaust/HVAC)."
 )
 
-RECENT_MONTHS = 18  # only surface inspections this recent
+RECENT_DAYS = 60  # rolling window: only surface inspections from the last N days
 
-# Keep the map focused on real leads. District 1+2 yield a few thousand V36 hits;
-# we surface the worst offenders only. Both knobs are safe to raise.
-PRIORITY_KEEP = {"HOT", "WARM"}   # drop low-signal MONITOR (single vent cite, no high-priority)
+# Show the full picture of recent activity: every establishment with a ceiling/vent
+# (V36) citation in the window, across all priority tiers. Narrow PRIORITY_KEEP to
+# {"HOT", "WARM"} if you ever want to trim low-signal single-cite records again.
+PRIORITY_KEEP = {"HOT", "WARM", "MONITOR"}
 MAX_RECORDS = 300                 # cap markers / geocode calls; worst-first
 
 USER_AGENT = "CeilingsRUs-ViolationMap/1.0 (+https://github.com/Jess-tolon-solutions/ceilings-ru-assessment-)"
@@ -204,13 +205,7 @@ def outreach_hook(total: int, hp: int, v36: int, disposition: str) -> str:
 # --------------------------------------------------------------------------- #
 
 def aggregate(rows: list[dict], cols: dict) -> list[dict]:
-    today = time.localtime()
-    cyear, cmonth = today.tm_year, today.tm_mon - (RECENT_MONTHS % 12)
-    cyear -= RECENT_MONTHS // 12
-    if cmonth <= 0:
-        cmonth += 12
-        cyear -= 1
-    cutoff = (cyear, cmonth)
+    cutoff = date.today() - timedelta(days=RECENT_DAYS)
 
     by_license: dict[str, dict] = {}
     for row in rows:
@@ -221,7 +216,7 @@ def aggregate(rows: list[dict], cols: dict) -> list[dict]:
         if not in_target_area(g("county"), g("zip")):
             continue
         d = parse_date(g("inspection_date"))
-        if d and (d.tm_year, d.tm_mon) < cutoff:
+        if d and date(d.tm_year, d.tm_mon, d.tm_mday) < cutoff:
             continue
 
         zipcode = g("zip")

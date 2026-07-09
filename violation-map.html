@@ -159,7 +159,6 @@ body{height:100%;font-family:'DM Sans',sans-serif;background:#F5F3EE;color:#1A2E
 <div class="screen" id="screen-map">
   <div class="map-header">
     <div style="display:flex;align-items:center;gap:14px;">
-      <div class="map-logo">Ceilings R Us <span>Violation Intelligence</span></div>
       <div class="vcount" id="vcount"><b>—</b> violations found</div>
     </div>
     <div style="display:flex;align-items:center;gap:10px;">
@@ -1633,15 +1632,55 @@ function initMap(zip){
     maxZoom:20,subdomains:'abcd'
   }).addTo(map);
 
-  const total=DATA.reduce((s,r)=>s+r.totalViolations,0);
-  document.getElementById('vcount').innerHTML=`<b>${total}</b> violations across ${DATA.length} restaurants · Miami-Dade · Broward · Palm Beach · Monroe`;
-  document.getElementById('sb-sub').textContent=`${DATA.length} restaurants · ${total} total violations`;
+  // Full-coverage bounds power the "Show all coverage" button below.
+  const geocodedAll=DATA.filter(r=>r.lat!=null&&r.lng!=null);
+  if(geocodedAll.length)coverageBounds=L.latLngBounds(geocodedAll.map(r=>[r.lat,r.lng]));
 
-  const sorted=[...DATA].sort((a,b)=>{
+  // Geocode the entered zip, then show only the violations near it. If the zip
+  // can't be geocoded, fall back to showing the whole coverage area.
+  fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=US&format=json&limit=1`)
+    .then(r=>r.json())
+    .then(d=>renderNearby((d&&d[0])?[parseFloat(d[0].lat),parseFloat(d[0].lon)]:null))
+    .catch(()=>renderNearby(null));
+}
+
+// Great-circle distance in miles between two [lat,lng] points.
+function haversine(a,b){
+  const R=3958.8,rad=x=>x*Math.PI/180;
+  const dLat=rad(b[0]-a[0]),dLng=rad(b[1]-a[1]);
+  const s=Math.sin(dLat/2)**2+Math.cos(rad(a[0]))*Math.cos(rad(b[0]))*Math.sin(dLng/2)**2;
+  return 2*R*Math.asin(Math.sqrt(s));
+}
+
+// Show the restaurants near `center`, widening the radius until at least a few
+// appear so the map is never empty. With no center, show the full coverage set.
+function renderNearby(center){
+  const geo=DATA.filter(r=>r.lat!=null&&r.lng!=null);
+  let subset=geo;
+  if(center){
+    for(const miles of [20,40,75]){
+      subset=geo.filter(r=>haversine(center,[r.lat,r.lng])<=miles);
+      if(subset.length>=3)break;
+    }
+    if(!subset.length)subset=geo;
+    if(youMarker)map.removeLayer(youMarker);
+    youMarker=L.marker(center).addTo(map).bindPopup('Your area');
+  }
+  renderSet(subset);
+}
+
+// Draw markers, sidebar and header counts for a given set of restaurants.
+function renderSet(list){
+  markers.forEach(x=>{if(x.m)map.removeLayer(x.m);});
+  markers=[];
+  const total=list.reduce((s,r)=>s+r.totalViolations,0);
+  document.getElementById('vcount').innerHTML=`<b>${total}</b> violations across ${list.length} restaurants · Miami-Dade · Broward · Palm Beach · Monroe`;
+  document.getElementById('sb-sub').textContent=`${list.length} restaurants · ${total} total violations`;
+
+  const sorted=[...list].sort((a,b)=>{
     const score=r=>r.hpViolations*3+r.totalViolations;
     return score(b)-score(a);
   });
-
   buildSidebar(sorted);
 
   sorted.forEach(r=>{
@@ -1650,36 +1689,20 @@ function initMap(zip){
       radius:7+Math.min(r.totalViolations,12),
       fillColor:col(w),color:'#fff',weight:2,opacity:1,fillOpacity:0.9
     }).addTo(map);
-
     m.bindPopup(popup(r),{maxWidth:290,minWidth:250});
     m.on('click',()=>highlightSI(r.id));
     markers.push({id:r.id,m,lat:r.lat,lng:r.lng});
   });
 
-  // Default to the full coverage footprint (Palm Beach down through the Keys),
-  // so every county is visible — not just the area around the entered zip.
-  if(markers.length){
-    coverageBounds=L.latLngBounds(markers.map(m=>[m.lat,m.lng]));
-    map.fitBounds(coverageBounds.pad(0.06));
-  }
-
-  // Geocode the zip and drop a "you are here" pin + gently focus that area,
-  // but stay zoomed out enough that neighboring counties' pins remain visible.
-  fetch(`https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=US&format=json&limit=1`)
-    .then(r=>r.json())
-    .then(d=>{
-      if(d&&d[0]){
-        const ll=[parseFloat(d[0].lat),parseFloat(d[0].lon)];
-        if(youMarker)map.removeLayer(youMarker);
-        youMarker=L.marker(ll).addTo(map).bindPopup('Your area');
-        map.setView(ll,10);
-      }
-    })
-    .catch(()=>{});
+  if(markers.length)map.fitBounds(L.latLngBounds(markers.map(m=>[m.lat,m.lng])).pad(0.12));
 }
 
-// Reset the map to show the entire coverage area.
-function showAll(){if(map&&coverageBounds)map.fitBounds(coverageBounds.pad(0.06));}
+// Reset the map to show every restaurant across the whole coverage area.
+function showAll(){
+  if(!map)return;
+  renderSet(DATA.filter(r=>r.lat!=null&&r.lng!=null));
+  if(coverageBounds)map.fitBounds(coverageBounds.pad(0.06));
+}
 
 function popup(r){
   const vhtml=r.violations.map(v=>{
