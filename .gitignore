@@ -1,0 +1,7 @@
+# This repository is PUBLIC — it serves the violation map via GitHub Pages.
+#
+# outreach/ holds CRU's prospecting work: target lists, restaurant phone numbers
+# and owner mailing addresses, and the internal outreach strategy. None of that
+# belongs in a public repo. It is tracked in its own local git repo inside
+# outreach/ — push that to a PRIVATE remote, never to this one.
+outreach/
