@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-24",
+  "updated": "2026-08-31",
   "source": "Florida DBPR, Division of Hotels & Restaurants — public inspection extracts (Districts 1 & 2)",
   "coverage": [
     "Miami-Dade",
@@ -8,10 +8,70 @@
     "Monroe"
   ],
   "filter": "Inspections citing Violation 36 — floors/walls/ceilings/attached equipment not properly constructed or clean, or rooms/equipment not properly vented.",
-  "count": 294,
+  "count": 295,
   "restaurants": [
     {
       "id": 1,
+      "name": "Rinconcito Latino Mixto",
+      "address": "2502 NW 10TH AVE, Miami, FL 33127",
+      "county": "Miami-Dade",
+      "lat": 25.800409,
+      "lng": -80.211346,
+      "totalViolations": 38,
+      "hpViolations": 7,
+      "v36Count": 4,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "HOT",
+      "license": "2319395",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "38 violations + 4x ceiling/vent (V36) + 7 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 4x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Fontana Restaurant",
+      "address": "1200 ANASTASIA AVE, Coral Gables, FL 331346300",
+      "county": "Miami-Dade",
+      "lat": 25.741427,
+      "lng": -80.278849,
+      "totalViolations": 37,
+      "hpViolations": 7,
+      "v36Count": 5,
+      "disposition": "Warning Issued",
+      "priority": "HOT",
+      "license": "2319410",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "37 violations + 5x ceiling/vent (V36) + 7 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 5x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 3,
       "name": "Cuba Lives Restaurant",
       "address": "4590 W 12 AVE, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -41,7 +101,37 @@
       ]
     },
     {
-      "id": 2,
+      "id": 4,
+      "name": "Rinconcito Miami 2",
+      "address": "15956 SW 137 AVE, Miami, FL 33177",
+      "county": "Miami-Dade",
+      "lat": 25.619745,
+      "lng": -80.414597,
+      "totalViolations": 42,
+      "hpViolations": 5,
+      "v36Count": 8,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2335597",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "42 violations + 8x ceiling/vent (V36) + 5 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 8x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "5 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 5,
       "name": "Seabra Bakery & Cafe",
       "address": "465-475 NE SPANISH RIVER BLVD, Boca Raton, FL 33431",
       "county": "Palm Beach",
@@ -71,7 +161,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 6,
       "name": "Miyako Japanese Restaurant Of Dadeland",
       "address": "9533 S DIXIE HIGHWAY, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -101,7 +191,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 7,
       "name": "El Mamey Fruteria",
       "address": "4410 W 16 AVE STE 10, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -131,7 +221,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 8,
       "name": "China Garden",
       "address": "7954 MCNAB RD, North Lauderdale, FL 33068",
       "county": "Broward",
@@ -161,7 +251,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 9,
       "name": "Naruto 88 Bistro",
       "address": "10471 N KENDALL DR STE B104, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -191,7 +281,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": 10,
       "name": "Sabor A Peru",
       "address": "2927 BICAYNE BLVD, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -221,7 +311,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 11,
       "name": "Sushi Yan",
       "address": "1929 N FEDERAL HWY, Boca Raton, FL 33432",
       "county": "Palm Beach",
@@ -251,7 +341,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 12,
       "name": "Sushi Sake",
       "address": "14627 - 14629 SW 42 ST, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -281,7 +371,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 13,
       "name": "Arepas NaâGuara",
       "address": "26700  S DIXIE HWY, Homestead, FL 33032",
       "county": "Miami-Dade",
@@ -311,7 +401,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 14,
       "name": "Huang'S China Buffet",
       "address": "3800 W 18 AVE 100, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -341,7 +431,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 15,
       "name": "China Cafe Restaurant Inc",
       "address": "7635 S DIXIE HWY, West Palm Beach, FL 33405",
       "county": "Palm Beach",
@@ -371,7 +461,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 16,
       "name": "Chifa Du Kang Chinese Restaurant",
       "address": "9899 SW 40 ST STE-A, Miami, FL 33165",
       "county": "Miami-Dade",
@@ -401,7 +491,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 17,
       "name": "Aoki Teppanyaki",
       "address": "7535 N KENDALL DR #2 530, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -431,7 +521,37 @@
       ]
     },
     {
-      "id": 15,
+      "id": 18,
+      "name": "100 Montaditos Midtown",
+      "address": "3252 NE 1 AVE STE 104, Miami, FL 33137",
+      "county": "Miami-Dade",
+      "lat": 25.807161,
+      "lng": -80.193041,
+      "totalViolations": 24,
+      "hpViolations": 7,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "HOT",
+      "license": "2336810",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "24 violations + 2x ceiling/vent (V36) + 7 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 19,
       "name": "Kanto Asian Street Food",
       "address": "720 LAKE AVE, Lake Worth Beach, FL 33460",
       "county": "Palm Beach",
@@ -461,97 +581,7 @@
       ]
     },
     {
-      "id": 16,
-      "name": "Lilly At Arcadia",
-      "address": "3660 RCA BLVD, Palm Beach Gardens, FL 33410",
-      "county": "Palm Beach",
-      "lat": 26.837833,
-      "lng": -80.090456,
-      "totalViolations": 20,
-      "hpViolations": 8,
-      "v36Count": 3,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "6022966",
-      "latest_inspection": "08/18/2026",
-      "outreach_hook": "20 violations + 3x ceiling/vent (V36) + 8 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "8 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 17,
-      "name": "South China Restaurant",
-      "address": "5550 FLAMINGO RD, Cooper City, FL 33330-2700",
-      "county": "Broward",
-      "lat": 26.04829,
-      "lng": -80.312938,
-      "totalViolations": 22,
-      "hpViolations": 7,
-      "v36Count": 2,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "1612266",
-      "latest_inspection": "08/19/2026",
-      "outreach_hook": "22 violations + 2x ceiling/vent (V36) + 7 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 18,
-      "name": "Ashoka Indian Restaurant Pinecrest",
-      "address": "12663 S DIXIE HWY, Pinecrest, FL 33156",
-      "county": "Miami-Dade",
-      "lat": 25.652659,
-      "lng": -80.329973,
-      "totalViolations": 36,
-      "hpViolations": 2,
-      "v36Count": 8,
-      "disposition": "Call Back - Extension given, pending",
-      "priority": "WARM",
-      "license": "2328082",
-      "latest_inspection": "08/18/2026",
-      "outreach_hook": "36 violations + 8x ceiling/vent (V36) + 2 high-priority + call back - extension given, pending",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 8x.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": "Call Back - Extension given, pending"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 19,
+      "id": 20,
       "name": "Avo Miami",
       "address": "5958 S DIXIE HWY STE B101, South Miami, FL 33143",
       "county": "Miami-Dade",
@@ -581,7 +611,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": 21,
       "name": "Sadelle'S Coconut Grove",
       "address": "3321 MARY ST, Miami, FL 33133",
       "county": "Miami-Dade",
@@ -611,7 +641,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": 22,
       "name": "The Best Taste Of Mexico",
       "address": "1108 S DIXIE HWY, Lake Worth Beach, FL 33460",
       "county": "Palm Beach",
@@ -641,7 +671,37 @@
       ]
     },
     {
-      "id": 22,
+      "id": 23,
+      "name": "No 1 Wok Of Miami",
+      "address": "2617 SW 147 AVE, Miami, FL 33185",
+      "county": "Miami-Dade",
+      "lat": 25.742476,
+      "lng": -80.43209,
+      "totalViolations": 22,
+      "hpViolations": 6,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "HOT",
+      "license": "2330088",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "22 violations + 2x ceiling/vent (V36) + 6 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "6 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 24,
       "name": "Flour And Weirdoughs",
       "address": "19-21 HARBOR DR, Key Biscayne, FL 33149",
       "county": "Miami-Dade",
@@ -671,7 +731,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": 25,
       "name": "Koume Japanese Restaurant",
       "address": "11905 W SUNRISE BLVD, Plantation, FL 33323",
       "county": "Broward",
@@ -701,7 +761,7 @@
       ]
     },
     {
-      "id": 24,
+      "id": 26,
       "name": "El Rancho Bakery And Restaurant",
       "address": "6023 KIMBERLY BLVD, North Lauderdale, FL 33068",
       "county": "Broward",
@@ -731,7 +791,7 @@
       ]
     },
     {
-      "id": 25,
+      "id": 27,
       "name": "Enas Secret Bake",
       "address": "691 W 49 ST, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -761,7 +821,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": 28,
       "name": "Eatapas",
       "address": "4140 N FEDERAL HWY, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -791,7 +851,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": 29,
       "name": "The Sushi Bar",
       "address": "8748 SW 72 ST, Miami, FL 33173",
       "county": "Miami-Dade",
@@ -821,7 +881,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": 30,
       "name": "Nueva San Salvador Restaurant #1",
       "address": "944 HIALEAH DR, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -851,7 +911,7 @@
       ]
     },
     {
-      "id": 29,
+      "id": 31,
       "name": "Black Market Miami",
       "address": "401 BISCAYNE BLVD 225, Miami, FL 33132",
       "county": "Miami-Dade",
@@ -881,7 +941,7 @@
       ]
     },
     {
-      "id": 30,
+      "id": 32,
       "name": "Michael'S Genuine Food & Drink",
       "address": "130 NE 40 ST, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -911,7 +971,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": 33,
       "name": "Bbq Toni8Ht",
       "address": "1386 S FEDERAL HWY, Pompano Beach, FL 33062",
       "county": "Broward",
@@ -941,7 +1001,67 @@
       ]
     },
     {
-      "id": 32,
+      "id": 34,
+      "name": "Bokamper'S",
+      "address": "3115 NE 32 AVE, Fort Lauderdale, FL 33308",
+      "county": "Broward",
+      "lat": 26.167909,
+      "lng": -80.103188,
+      "totalViolations": 17,
+      "hpViolations": 7,
+      "v36Count": 1,
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "1623408",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "17 violations + 1x ceiling/vent (V36) + 7 high-priority + administrative complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Administrative complaint recommended"
+        },
+        {
+          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Budare Bistro",
+      "address": "1832 SW 3 AVE, Miami, FL 33129",
+      "county": "Miami-Dade",
+      "lat": 25.760074,
+      "lng": -80.201429,
+      "totalViolations": 28,
+      "hpViolations": 3,
+      "v36Count": 4,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2327095",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "28 violations + 4x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 4x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 36,
       "name": "Ricky'S Blue Heaven",
       "address": "729 THOMAS ST, Key West, FL 330407334",
       "county": "Monroe",
@@ -971,7 +1091,7 @@
       ]
     },
     {
-      "id": 33,
+      "id": 37,
       "name": "Hook & Reel",
       "address": "7841 PINES BLVD, Pembroke Pines, FL 33024",
       "county": "Broward",
@@ -1001,7 +1121,7 @@
       ]
     },
     {
-      "id": 34,
+      "id": 38,
       "name": "La Casita Tropical Restaurant",
       "address": "6301 JOHNSON ST, Hollywood, FL 33024",
       "county": "Broward",
@@ -1031,7 +1151,37 @@
       ]
     },
     {
-      "id": 35,
+      "id": 39,
+      "name": "Jamaica Kitchen",
+      "address": "8736 SW 72 ST, Miami, FL 331733512",
+      "county": "Miami-Dade",
+      "lat": 25.702213,
+      "lng": -80.335322,
+      "totalViolations": 15,
+      "hpViolations": 7,
+      "v36Count": 3,
+      "disposition": "Call Back - Admin. complaint recommended",
+      "priority": "HOT",
+      "license": "2322885",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "15 violations + 3x ceiling/vent (V36) + 7 high-priority + call back - admin. complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Call Back - Admin. complaint recommended"
+        },
+        {
+          "description": "7 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 40,
       "name": "Mayamex Restaurant",
       "address": "886-892 N KROME AVE, Homestead, FL 33030",
       "county": "Miami-Dade",
@@ -1061,7 +1211,7 @@
       ]
     },
     {
-      "id": 36,
+      "id": 41,
       "name": "Cvi.Che 105 Aventura",
       "address": "19501 BISCAYNE BLVD  UNIT 954, Aventura, FL 33180",
       "county": "Miami-Dade",
@@ -1091,7 +1241,7 @@
       ]
     },
     {
-      "id": 37,
+      "id": 42,
       "name": "Las Americas Latin Restaurant",
       "address": "1336 S MILITARY TRL, West Palm Beach, FL 33415",
       "county": "Palm Beach",
@@ -1121,7 +1271,7 @@
       ]
     },
     {
-      "id": 38,
+      "id": 43,
       "name": "Taqueria Guerrero",
       "address": "628 BELVEDERE RD, West Palm Beach, FL 33405",
       "county": "Palm Beach",
@@ -1151,7 +1301,7 @@
       ]
     },
     {
-      "id": 39,
+      "id": 44,
       "name": "Mandy'S Natural Juices",
       "address": "1945 W 60 ST, Hialeah, FL 330127504",
       "county": "Miami-Dade",
@@ -1181,7 +1331,7 @@
       ]
     },
     {
-      "id": 40,
+      "id": 45,
       "name": "Yes! Cafe & Pizza",
       "address": "731 NE 79TH STREET, Miami, FL 33138",
       "county": "Miami-Dade",
@@ -1211,7 +1361,7 @@
       ]
     },
     {
-      "id": 41,
+      "id": 46,
       "name": "Chinatown West",
       "address": "4210 SW 152 AVE, Miami, FL 33185",
       "county": "Miami-Dade",
@@ -1241,7 +1391,7 @@
       ]
     },
     {
-      "id": 42,
+      "id": 47,
       "name": "Sushi Sake",
       "address": "701 W  49 ST, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -1271,7 +1421,7 @@
       ]
     },
     {
-      "id": 43,
+      "id": 48,
       "name": "Dany'S Kitchen",
       "address": "8111 NORTH MIAMI AVENUE, Miami, FL 33150",
       "county": "Miami-Dade",
@@ -1301,7 +1451,7 @@
       ]
     },
     {
-      "id": 44,
+      "id": 49,
       "name": "Pico Eâ Gallo Barbecue",
       "address": "8240 NW 74 ST, Medley, FL 33166",
       "county": "Miami-Dade",
@@ -1331,7 +1481,7 @@
       ]
     },
     {
-      "id": 45,
+      "id": 50,
       "name": "China One",
       "address": "15711 SHERIDAN ST, Davie, FL 33331",
       "county": "Broward",
@@ -1361,7 +1511,7 @@
       ]
     },
     {
-      "id": 46,
+      "id": 51,
       "name": "Saiko-I Sushi Lounge And Hibachi",
       "address": "8160 W BROWARD BLVD, Plantation, FL 33324",
       "county": "Broward",
@@ -1391,7 +1541,7 @@
       ]
     },
     {
-      "id": 47,
+      "id": 52,
       "name": "Aromas Del Peru",
       "address": "1 N OCEAN BLVD SP 102, Pompano Beach, FL 33062",
       "county": "Palm Beach",
@@ -1421,7 +1571,7 @@
       ]
     },
     {
-      "id": 48,
+      "id": 53,
       "name": "Latin Cafe 2000",
       "address": "1192 W 49 ST, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -1451,7 +1601,37 @@
       ]
     },
     {
-      "id": 49,
+      "id": 54,
+      "name": "South China Restaurant",
+      "address": "5550 FLAMINGO RD, Cooper City, FL 33330-2700",
+      "county": "Broward",
+      "lat": 26.04829,
+      "lng": -80.312938,
+      "totalViolations": 16,
+      "hpViolations": 6,
+      "v36Count": 3,
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "1612266",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "16 violations + 3x ceiling/vent (V36) + 6 high-priority + administrative complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": "Administrative complaint recommended"
+        },
+        {
+          "description": "6 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 55,
       "name": "Embrace Brazilian Kitchen",
       "address": "1375 LYONS RD, Coconut Creek, FL 33063",
       "county": "Broward",
@@ -1481,7 +1661,67 @@
       ]
     },
     {
-      "id": 50,
+      "id": 56,
+      "name": "Mainland China Bistro",
+      "address": "2445 N UNIVERSITY DR, Coral Springs, FL 33065",
+      "county": "Broward",
+      "lat": 26.260707,
+      "lng": -80.249855,
+      "totalViolations": 19,
+      "hpViolations": 5,
+      "v36Count": 2,
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "1624194",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "19 violations + 2x ceiling/vent (V36) + 5 high-priority + administrative complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Administrative complaint recommended"
+        },
+        {
+          "description": "5 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Cafe Panisse",
+      "address": "7310 SW 57 AVE, Miami, FL 33143",
+      "county": "Miami-Dade",
+      "lat": 25.703366,
+      "lng": -80.285414,
+      "totalViolations": 24,
+      "hpViolations": 3,
+      "v36Count": 6,
+      "disposition": "Call Back - Admin. complaint recommended",
+      "priority": "WARM",
+      "license": "2327775",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "24 violations + 6x ceiling/vent (V36) + 3 high-priority + call back - admin. complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 6x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Call Back - Admin. complaint recommended"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 58,
       "name": "Rey'S Pizza",
       "address": "8790 NW 122 ST, Hialeah Gardens, FL 33018",
       "county": "Miami-Dade",
@@ -1511,7 +1751,7 @@
       ]
     },
     {
-      "id": 51,
+      "id": 59,
       "name": "El Turco",
       "address": "5020 NE 2 AVE, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -1541,7 +1781,7 @@
       ]
     },
     {
-      "id": 52,
+      "id": 60,
       "name": "Taco Tuesdays Taqueria",
       "address": "600 N CONGRESS AVE STE 110, Delray Beach, FL 33445",
       "county": "Palm Beach",
@@ -1571,7 +1811,7 @@
       ]
     },
     {
-      "id": 53,
+      "id": 61,
       "name": "Sushi Rock - Boca Raton",
       "address": "174 NW 51 ST, Boca Raton, FL 33431",
       "county": "Palm Beach",
@@ -1601,7 +1841,7 @@
       ]
     },
     {
-      "id": 54,
+      "id": 62,
       "name": "Fannys Restaurant",
       "address": "701 W 27 ST, Hialeah, FL 33010-1215",
       "county": "Miami-Dade",
@@ -1631,7 +1871,7 @@
       ]
     },
     {
-      "id": 55,
+      "id": 63,
       "name": "Hooters Of Hialeah",
       "address": "680 W 49 ST, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -1661,7 +1901,37 @@
       ]
     },
     {
-      "id": 56,
+      "id": 64,
+      "name": "La Fontana D'Orazio",
+      "address": "10702 NW 74 ST UNIT 5&6, Doral, FL 33178",
+      "county": "Miami-Dade",
+      "lat": 25.840594,
+      "lng": -80.370572,
+      "totalViolations": 23,
+      "hpViolations": 3,
+      "v36Count": 1,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "2334399",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "23 violations + 1x ceiling/vent (V36) + 3 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 65,
       "name": "Old Tom'S Sports Bar Restaurant",
       "address": "9525 NORTH KENDALL DR, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -1691,7 +1961,7 @@
       ]
     },
     {
-      "id": 57,
+      "id": 66,
       "name": "Macondo Coffee Roasters Pinecrest",
       "address": "13101 SW 89 PL #109, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -1721,7 +1991,7 @@
       ]
     },
     {
-      "id": 58,
+      "id": 67,
       "name": "Mac'S Place",
       "address": "1605 N ROOSEVELT BLVD, Key West, FL 33040",
       "county": "Monroe",
@@ -1751,7 +2021,7 @@
       ]
     },
     {
-      "id": 59,
+      "id": 68,
       "name": "Rinconcito Paisa Restaurant",
       "address": "12823 SW 42 ST, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -1781,7 +2051,7 @@
       ]
     },
     {
-      "id": 60,
+      "id": 69,
       "name": "Cafe Espana",
       "address": "498 W 28TH ST, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -1811,7 +2081,67 @@
       ]
     },
     {
-      "id": 61,
+      "id": 70,
+      "name": "Las Columnas Restaurant",
+      "address": "1657 NW 79 AVE, Doral, FL 33126",
+      "county": "Miami-Dade",
+      "lat": 25.786411,
+      "lng": -80.323902,
+      "totalViolations": 19,
+      "hpViolations": 4,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2326918",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "19 violations + 2x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Baires Grill",
+      "address": "1010 S MIAMI AVE, Miami, FL 33130",
+      "county": "Miami-Dade",
+      "lat": 25.764346,
+      "lng": -80.193292,
+      "totalViolations": 22,
+      "hpViolations": 3,
+      "v36Count": 2,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "2330068",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "22 violations + 2x ceiling/vent (V36) + 3 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 72,
       "name": "The Daily Creative Food Co",
       "address": "2001 BISCAYNE BLVD STE 109, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -1841,7 +2171,37 @@
       ]
     },
     {
-      "id": 62,
+      "id": 73,
+      "name": "Sabor Venezolano",
+      "address": "10722 NW 74TH STREET, Doral, FL 33178",
+      "county": "Miami-Dade",
+      "lat": 25.840586,
+      "lng": -80.372046,
+      "totalViolations": 16,
+      "hpViolations": 5,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2332357",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "16 violations + 1x ceiling/vent (V36) + 5 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "5 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 74,
       "name": "Cafe Papillon",
       "address": "244 BISCAYNE BLVD N-2, Miami, FL 33132",
       "county": "Miami-Dade",
@@ -1871,7 +2231,7 @@
       ]
     },
     {
-      "id": 63,
+      "id": 75,
       "name": "Feijao Con Arroz Restaurant",
       "address": "559 E SAMPLE RD, Pompano Beach, FL 33064-4425",
       "county": "Broward",
@@ -1901,7 +2261,7 @@
       ]
     },
     {
-      "id": 64,
+      "id": 76,
       "name": "Las Carnitas Inc",
       "address": "3221 W DAVIE BLVD, Fort Lauderdale, FL 33312",
       "county": "Broward",
@@ -1931,7 +2291,37 @@
       ]
     },
     {
-      "id": 65,
+      "id": 77,
+      "name": "Sakura Gables Japanese Rest",
+      "address": "440 S DIXIE HWY, Coral Gables, FL 331462201",
+      "county": "Miami-Dade",
+      "lat": 25.725551,
+      "lng": -80.262762,
+      "totalViolations": 21,
+      "hpViolations": 3,
+      "v36Count": 6,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2301326",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "21 violations + 6x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 6x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 78,
       "name": "Manhattan Chicago Real Pizza",
       "address": "12715 S DIXIE HWY #B, Pinecrest, FL 33156",
       "county": "Miami-Dade",
@@ -1961,7 +2351,7 @@
       ]
     },
     {
-      "id": 66,
+      "id": 79,
       "name": "El Rey De La Frita",
       "address": "421 W 29 ST, Hialeah, FL 330125700",
       "county": "Miami-Dade",
@@ -1991,7 +2381,7 @@
       ]
     },
     {
-      "id": 67,
+      "id": 80,
       "name": "Apizza Brooklyn",
       "address": "9513 - 9515 S DIXIE HWY, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -2021,7 +2411,7 @@
       ]
     },
     {
-      "id": 68,
+      "id": 81,
       "name": "Nova Gourmet",
       "address": "7520 NW 104 AVE STE A-106, Doral, FL 33178",
       "county": "Miami-Dade",
@@ -2051,7 +2441,7 @@
       ]
     },
     {
-      "id": 69,
+      "id": 82,
       "name": "Dunkin Donuts #91",
       "address": "5645 NW 87 AVE STE 120, Doral, FL 33178",
       "county": "Miami-Dade",
@@ -2081,7 +2471,7 @@
       ]
     },
     {
-      "id": 70,
+      "id": 83,
       "name": "Maman",
       "address": "5801 SUNSET DR, South Miami, FL 33143",
       "county": "Miami-Dade",
@@ -2111,7 +2501,7 @@
       ]
     },
     {
-      "id": 71,
+      "id": 84,
       "name": "Los Q'Su2 De Medallo",
       "address": "2322 NE 2 AVE, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -2141,7 +2531,7 @@
       ]
     },
     {
-      "id": 72,
+      "id": 85,
       "name": "China Sky",
       "address": "7748 W COMMERCIAL BLVD, Lauderhill, FL 33351",
       "county": "Broward",
@@ -2171,7 +2561,67 @@
       ]
     },
     {
-      "id": 73,
+      "id": 86,
+      "name": "5Th Element Indian Grill",
+      "address": "1325 S POWERLINE RD, Pompano Beach, FL 33069",
+      "county": "Broward",
+      "lat": 26.212026,
+      "lng": -80.155978,
+      "totalViolations": 15,
+      "hpViolations": 5,
+      "v36Count": 1,
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "1623824",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "15 violations + 1x ceiling/vent (V36) + 5 high-priority + administrative complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Administrative complaint recommended"
+        },
+        {
+          "description": "5 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "La Rural Argentine Steakhouse",
+      "address": "2346 - 2350 WESTON RD, Weston, FL 33326",
+      "county": "Broward",
+      "lat": 26.089564,
+      "lng": -80.371753,
+      "totalViolations": 12,
+      "hpViolations": 6,
+      "v36Count": 1,
+      "disposition": "Warning Issued",
+      "priority": "HOT",
+      "license": "1623918",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "12 violations + 1x ceiling/vent (V36) + 6 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "6 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 88,
       "name": "The Betsy South Beach",
       "address": "1440 OCEAN DRIVE, Miami Beach, FL 33139",
       "county": "Miami-Dade",
@@ -2201,7 +2651,7 @@
       ]
     },
     {
-      "id": 74,
+      "id": 89,
       "name": "Los Mejores Tamales De Miami",
       "address": "1004 E 16 ST, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -2231,7 +2681,7 @@
       ]
     },
     {
-      "id": 75,
+      "id": 90,
       "name": "The Real Food Academy",
       "address": "570 NE 81 ST, Miami, FL 33138",
       "county": "Miami-Dade",
@@ -2261,7 +2711,7 @@
       ]
     },
     {
-      "id": 76,
+      "id": 91,
       "name": "Mofongo'S Restaurant",
       "address": "1672 SW 8 ST, Miami, FL 33135",
       "county": "Miami-Dade",
@@ -2291,7 +2741,7 @@
       ]
     },
     {
-      "id": 77,
+      "id": 92,
       "name": "Meet Chongqing Hot Pot",
       "address": "6820 STIRLING RD, Hollywood, FL 33024",
       "county": "Broward",
@@ -2321,7 +2771,7 @@
       ]
     },
     {
-      "id": 78,
+      "id": 93,
       "name": "La Granja Restaurant",
       "address": "3301 NORTHLAKE BLVD, Palm Beach Gardens, FL 33410",
       "county": "Palm Beach",
@@ -2351,7 +2801,7 @@
       ]
     },
     {
-      "id": 79,
+      "id": 94,
       "name": "Moon Thai",
       "address": "1118 S DIXIE HWY, Coral Gables, FL 33146",
       "county": "Miami-Dade",
@@ -2381,7 +2831,7 @@
       ]
     },
     {
-      "id": 80,
+      "id": 95,
       "name": "El Salvadoreno Restaurant And Grill",
       "address": "10855 SW 72ST UNIT 28, Miami, FL 33173",
       "county": "Miami-Dade",
@@ -2411,7 +2861,37 @@
       ]
     },
     {
-      "id": 81,
+      "id": 96,
+      "name": "Sano Food",
+      "address": "10712 NW 74 ST, Doral, FL 33178",
+      "county": "Miami-Dade",
+      "lat": 25.84059,
+      "lng": -80.371309,
+      "totalViolations": 22,
+      "hpViolations": 2,
+      "v36Count": 4,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "2333774",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "22 violations + 4x ceiling/vent (V36) + 2 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 4x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 97,
       "name": "Butcher Shop",
       "address": "14235 S DIXIE HWY, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -2441,7 +2921,7 @@
       ]
     },
     {
-      "id": 82,
+      "id": 98,
       "name": "Lemon Peppers",
       "address": "2701 NW 54TH ST, Miami, FL 33142",
       "county": "Miami-Dade",
@@ -2471,7 +2951,7 @@
       ]
     },
     {
-      "id": 83,
+      "id": 99,
       "name": "Manila Kantina Asian Food & Grocery",
       "address": "245 E FLAGLER ST, Miami, FL 33131",
       "county": "Miami-Dade",
@@ -2501,7 +2981,7 @@
       ]
     },
     {
-      "id": 84,
+      "id": 100,
       "name": "Daniel'S Miami",
       "address": "1500 SAN IGNACIO AVE, Coral Gables, FL 33146",
       "county": "Miami-Dade",
@@ -2531,7 +3011,7 @@
       ]
     },
     {
-      "id": 85,
+      "id": 101,
       "name": "First Flight Island Restaurant & Brewery",
       "address": "301 WHITEHEAD ST, Key West, FL 33040",
       "county": "Monroe",
@@ -2561,7 +3041,7 @@
       ]
     },
     {
-      "id": 86,
+      "id": 102,
       "name": "Weston Diner",
       "address": "4484 WESTON RD, Davie, FL 33331",
       "county": "Broward",
@@ -2591,7 +3071,7 @@
       ]
     },
     {
-      "id": 87,
+      "id": 103,
       "name": "Ricuras Latinas",
       "address": "2519 N SR7, Margate, FL 33063",
       "county": "Broward",
@@ -2621,7 +3101,37 @@
       ]
     },
     {
-      "id": 88,
+      "id": 104,
+      "name": "Ichiban Sushi And Thai",
+      "address": "7400 N FEDERAL HWY STE C5, Boca Raton, FL 33487",
+      "county": "Palm Beach",
+      "lat": 26.415284,
+      "lng": -80.075204,
+      "totalViolations": 10,
+      "hpViolations": 6,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "HOT",
+      "license": "6013697",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 6 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "6 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 105,
       "name": "Souvlaki Fresh",
       "address": "122 NE 2 ST, Boca Raton, FL 33432",
       "county": "Palm Beach",
@@ -2651,7 +3161,7 @@
       ]
     },
     {
-      "id": 89,
+      "id": 106,
       "name": "Basil Restaurant",
       "address": "218 S OCEAN AVE, Manalapan, FL 33462",
       "county": "Palm Beach",
@@ -2681,7 +3191,7 @@
       ]
     },
     {
-      "id": 90,
+      "id": 107,
       "name": "New Canton",
       "address": "1825 SW 8 ST, Miami, FL 33135",
       "county": "Miami-Dade",
@@ -2711,7 +3221,7 @@
       ]
     },
     {
-      "id": 91,
+      "id": 108,
       "name": "San Lazaro Cafeteria",
       "address": "2400 W 2 AVE BAY 1, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -2741,7 +3251,7 @@
       ]
     },
     {
-      "id": 92,
+      "id": 109,
       "name": "Muffin Tin The",
       "address": "12655 S DIXIE HWY, Miami, FL 331565931",
       "county": "Miami-Dade",
@@ -2771,7 +3281,7 @@
       ]
     },
     {
-      "id": 93,
+      "id": 110,
       "name": "Fritanga Monte Limar",
       "address": "15722 SW 72 ST, Miami, FL 33193",
       "county": "Miami-Dade",
@@ -2801,7 +3311,7 @@
       ]
     },
     {
-      "id": 94,
+      "id": 111,
       "name": "Miyako Jap Rest",
       "address": "5844 SW 73 ST, South Miami, FL 33143",
       "county": "Miami-Dade",
@@ -2831,7 +3341,7 @@
       ]
     },
     {
-      "id": 95,
+      "id": 112,
       "name": "Jin Jin Chinese",
       "address": "15705 SW 56 ST, Miami, FL 33185",
       "county": "Miami-Dade",
@@ -2861,7 +3371,7 @@
       ]
     },
     {
-      "id": 96,
+      "id": 113,
       "name": "La Parrilla Latina",
       "address": "28864 S DIXIE HWY, Homestead, FL 33033",
       "county": "Miami-Dade",
@@ -2891,7 +3401,7 @@
       ]
     },
     {
-      "id": 97,
+      "id": 114,
       "name": "Iron Sushi",
       "address": "9030 SW 72 PL, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -2921,7 +3431,7 @@
       ]
     },
     {
-      "id": 98,
+      "id": 115,
       "name": "El Sitio Coffee Bar Inc",
       "address": "19 NE 2 AVE, Miami, FL 33132",
       "county": "Miami-Dade",
@@ -2951,7 +3461,7 @@
       ]
     },
     {
-      "id": 99,
+      "id": 116,
       "name": "Fritanga Monimbo Palmetto Bay",
       "address": "15801 S DIXIE HWY  STE C, Palmetto Bay, FL 33157",
       "county": "Miami-Dade",
@@ -2981,7 +3491,7 @@
       ]
     },
     {
-      "id": 100,
+      "id": 117,
       "name": "Moo!",
       "address": "12735 SW 42ND ST, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -3011,37 +3521,7 @@
       ]
     },
     {
-      "id": 101,
-      "name": "Craft Coconut Grove",
-      "address": "3324 VIRGINIA ST, Miami, FL 33133",
-      "county": "Miami-Dade",
-      "lat": 25.7295,
-      "lng": -80.241593,
-      "totalViolations": 18,
-      "hpViolations": 3,
-      "v36Count": 3,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2338152",
-      "latest_inspection": "08/14/2026",
-      "outreach_hook": "18 violations + 3x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 102,
+      "id": 118,
       "name": "H&H Bagels",
       "address": "11311 S DIXIE HWY, Pinecrest, FL 33156",
       "county": "Miami-Dade",
@@ -3071,7 +3551,7 @@
       ]
     },
     {
-      "id": 103,
+      "id": 119,
       "name": "Tee-Jay Thai Sushi Restaurant",
       "address": "5975 N FEDERAL HWY STE 115, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -3101,7 +3581,7 @@
       ]
     },
     {
-      "id": 104,
+      "id": 120,
       "name": "La Perla Ceviches & Rolls",
       "address": "2219  N COMMERCE PKWAY, Weston, FL 33326",
       "county": "Broward",
@@ -3131,7 +3611,7 @@
       ]
     },
     {
-      "id": 105,
+      "id": 121,
       "name": "Kaluz Restaurant",
       "address": "3300 E COMMERCIAL BLVD, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -3161,7 +3641,7 @@
       ]
     },
     {
-      "id": 106,
+      "id": 122,
       "name": "La Granja Restaurant",
       "address": "10590 W FOREST HILL BLVD, Wellington, FL 33414",
       "county": "Palm Beach",
@@ -3191,7 +3671,7 @@
       ]
     },
     {
-      "id": 107,
+      "id": 123,
       "name": "Bahama Fish Market",
       "address": "7202 SW 8 ST, Miami, FL 33172",
       "county": "Miami-Dade",
@@ -3221,7 +3701,37 @@
       ]
     },
     {
-      "id": 108,
+      "id": 124,
+      "name": "Taco Rico",
+      "address": "7921 SW 40 ST 47-48, Miami, FL 33155",
+      "county": "Miami-Dade",
+      "lat": 25.733053,
+      "lng": -80.320155,
+      "totalViolations": 14,
+      "hpViolations": 4,
+      "v36Count": 3,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2325761",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "14 violations + 3x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 125,
       "name": "Nikko Japanese Restaurant",
       "address": "827 N HOMESTEAD BLVD, Homestead, FL 330305024",
       "county": "Miami-Dade",
@@ -3251,7 +3761,7 @@
       ]
     },
     {
-      "id": 109,
+      "id": 126,
       "name": "Fritanga Momotombo",
       "address": "15888 SW 137 AVE, Miami, FL 33177",
       "county": "Miami-Dade",
@@ -3281,7 +3791,7 @@
       ]
     },
     {
-      "id": 110,
+      "id": 127,
       "name": "El Coliseo",
       "address": "7317 SW 107 AVE, Miami, FL 33173",
       "county": "Miami-Dade",
@@ -3311,7 +3821,7 @@
       ]
     },
     {
-      "id": 111,
+      "id": 128,
       "name": "Macita'S Restaurant",
       "address": "18533 S. DIXIE HWY, Miami, FL 33157",
       "county": "Miami-Dade",
@@ -3341,7 +3851,7 @@
       ]
     },
     {
-      "id": 112,
+      "id": 129,
       "name": "Pizza Tropical",
       "address": "7010 BISCAYNE BLVD, Miami, FL 33138",
       "county": "Miami-Dade",
@@ -3371,7 +3881,7 @@
       ]
     },
     {
-      "id": 113,
+      "id": 130,
       "name": "Fiore Caffe",
       "address": "228 SE 1 ST, Miami, FL 33131",
       "county": "Miami-Dade",
@@ -3401,37 +3911,37 @@
       ]
     },
     {
-      "id": 114,
-      "name": "Maman",
-      "address": "1874 BAY RD, Miami Beach, FL 33139",
+      "id": 131,
+      "name": "Shiraz Bistro & Market",
+      "address": "9630 SW 77 AVE, Miami, FL 33156",
       "county": "Miami-Dade",
-      "lat": 25.794307,
-      "lng": -80.143817,
-      "totalViolations": 14,
-      "hpViolations": 4,
-      "v36Count": 2,
-      "disposition": "Warning Issued",
+      "lat": 25.681107,
+      "lng": -80.318952,
+      "totalViolations": 17,
+      "hpViolations": 3,
+      "v36Count": 3,
+      "disposition": "Inspection Completed - No Further Action",
       "priority": "WARM",
-      "license": "2334685",
-      "latest_inspection": "08/18/2026",
-      "outreach_hook": "14 violations + 2x ceiling/vent (V36) + 4 high-priority + warning issued",
+      "license": "2333852",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "17 violations + 3x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
       "violations": [
         {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
           "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": "Warning Issued"
+          "date": "08/25/2026",
+          "disposition": "Inspection Completed - No Further Action"
         },
         {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
           "severity": "High Priority",
-          "date": "08/18/2026",
+          "date": "08/25/2026",
           "disposition": ""
         }
       ]
     },
     {
-      "id": 115,
+      "id": 132,
       "name": "Cmx Brickell Stone Sports Bar",
       "address": "701 S MIAMI AVE  STE 401A, Miami, FL 33130",
       "county": "Miami-Dade",
@@ -3461,7 +3971,7 @@
       ]
     },
     {
-      "id": 116,
+      "id": 133,
       "name": "Gheemiami",
       "address": "8965 SW 72 PL, Kendall, FL 33156",
       "county": "Miami-Dade",
@@ -3491,7 +4001,7 @@
       ]
     },
     {
-      "id": 117,
+      "id": 134,
       "name": "Ac Hotel Miami Midtown",
       "address": "3400 BISCAYNE BLVD, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -3521,7 +4031,7 @@
       ]
     },
     {
-      "id": 118,
+      "id": 135,
       "name": "Fonda Sabaneta",
       "address": "8766 W FLAGLER ST, Miami, FL 33174",
       "county": "Miami-Dade",
@@ -3551,7 +4061,7 @@
       ]
     },
     {
-      "id": 119,
+      "id": 136,
       "name": "Takeeoutee",
       "address": "13101 SW 89 PL STE 108, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -3581,7 +4091,37 @@
       ]
     },
     {
-      "id": 120,
+      "id": 137,
+      "name": "Island Tiki Bar",
+      "address": "27340 OVERSEAS HWY, Ramrod Key, FL 33042",
+      "county": "Monroe",
+      "lat": 24.662109,
+      "lng": -81.406844,
+      "totalViolations": 17,
+      "hpViolations": 3,
+      "v36Count": 1,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "5400065",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "17 violations + 1x ceiling/vent (V36) + 3 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 138,
       "name": "Toasted Cafe",
       "address": "5428 WEST ATLANTIC BLVD, Margate, FL 33063",
       "county": "Broward",
@@ -3611,7 +4151,7 @@
       ]
     },
     {
-      "id": 121,
+      "id": 139,
       "name": "Pinolandia - Fritanga & Tortilleria",
       "address": "1290 N MILITARY TRL, West Palm Beach, FL 33409",
       "county": "Palm Beach",
@@ -3641,7 +4181,37 @@
       ]
     },
     {
-      "id": 122,
+      "id": 140,
+      "name": "Toro Toro",
+      "address": "100 CHOPIN PLAZA, Miami, FL 33131",
+      "county": "Miami-Dade",
+      "lat": 25.772699,
+      "lng": -80.187057,
+      "totalViolations": 19,
+      "hpViolations": 2,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2317202",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "19 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 141,
       "name": "Taco Rico",
       "address": "18683 S DIXIE HWY, Cutler Bay, FL 33157",
       "county": "Miami-Dade",
@@ -3671,7 +4241,7 @@
       ]
     },
     {
-      "id": 123,
+      "id": 142,
       "name": "Keg South Of Kendall",
       "address": "12805 SW 136 AVE, Miami, FL 331865810",
       "county": "Miami-Dade",
@@ -3701,7 +4271,7 @@
       ]
     },
     {
-      "id": 124,
+      "id": 143,
       "name": "Casita Tejas Mexican Rest",
       "address": "27 N KROME AVE, Homestead, FL 330306014",
       "county": "Miami-Dade",
@@ -3731,7 +4301,7 @@
       ]
     },
     {
-      "id": 125,
+      "id": 144,
       "name": "Guadalajara Mexican Restaurant",
       "address": "8461 SW 132 ST, Kendall, FL 33156",
       "county": "Miami-Dade",
@@ -3761,7 +4331,7 @@
       ]
     },
     {
-      "id": 126,
+      "id": 145,
       "name": "El Berrinche",
       "address": "13911 SW 42ND ST #111 & 112, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -3791,7 +4361,37 @@
       ]
     },
     {
-      "id": 127,
+      "id": 146,
+      "name": "Alfreds Bakery Doral",
+      "address": "10740 NW 74 ST, Doral, FL 33178",
+      "county": "Miami-Dade",
+      "lat": 25.840579,
+      "lng": -80.373371,
+      "totalViolations": 13,
+      "hpViolations": 4,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2335448",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "13 violations + 2x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 147,
       "name": "Smash Bros Burgers And Shakes",
       "address": "2925 BISCAYNE BLVD, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -3821,7 +4421,7 @@
       ]
     },
     {
-      "id": 128,
+      "id": 148,
       "name": "Alonzo'S Oyster Bar",
       "address": "700 FRONT ST SUITE #1, Key West, FL 33040",
       "county": "Monroe",
@@ -3851,7 +4451,7 @@
       ]
     },
     {
-      "id": 129,
+      "id": 149,
       "name": "Jimmy'S Ocean Blue Abbey Road",
       "address": "3675 S ROOSEVELT BLVD, Key West, FL 33040",
       "county": "Monroe",
@@ -3881,7 +4481,7 @@
       ]
     },
     {
-      "id": 130,
+      "id": 150,
       "name": "Hollywood Moonlite Diner",
       "address": "3500 OAKWOOD BLVD, Hollywood, FL 33020",
       "county": "Broward",
@@ -3911,7 +4511,7 @@
       ]
     },
     {
-      "id": 131,
+      "id": 151,
       "name": "Way Beyond Bagels",
       "address": "9858 CLINT MOORE RD STE 122, Boca Raton, FL 33496",
       "county": "Palm Beach",
@@ -3941,7 +4541,7 @@
       ]
     },
     {
-      "id": 132,
+      "id": 152,
       "name": "Deli Lane Cafe",
       "address": "7230 SW 59 AVE, South Miami, FL 331435208",
       "county": "Miami-Dade",
@@ -3971,7 +4571,7 @@
       ]
     },
     {
-      "id": 133,
+      "id": 153,
       "name": "Fonda Sabaneta",
       "address": "10855 SW 72 ST STE 47, Miami, FL 33173",
       "county": "Miami-Dade",
@@ -4001,7 +4601,7 @@
       ]
     },
     {
-      "id": 134,
+      "id": 154,
       "name": "Diced",
       "address": "15467 SW 137 AVE, Miami, FL 33177",
       "county": "Miami-Dade",
@@ -4031,7 +4631,7 @@
       ]
     },
     {
-      "id": 135,
+      "id": 155,
       "name": "Casacuba Restaurant",
       "address": "5859 SW 73RD ST, South Miami, FL 33143",
       "county": "Miami-Dade",
@@ -4061,7 +4661,37 @@
       ]
     },
     {
-      "id": 136,
+      "id": 156,
+      "name": "China Town",
+      "address": "18344 NW 7 AVE, Miami, FL 33169",
+      "county": "Miami-Dade",
+      "lat": 25.942696,
+      "lng": -80.213276,
+      "totalViolations": 12,
+      "hpViolations": 4,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2331217",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "12 violations + 1x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 157,
       "name": "Mochima Bistro",
       "address": "11030 SW 184 ST, Miami, FL 33157",
       "county": "Miami-Dade",
@@ -4091,7 +4721,7 @@
       ]
     },
     {
-      "id": 137,
+      "id": 158,
       "name": "Merkado 31",
       "address": "1127 NE 163 ST, North Miami Beach, FL 33162",
       "county": "Miami-Dade",
@@ -4121,7 +4751,37 @@
       ]
     },
     {
-      "id": 138,
+      "id": 159,
+      "name": "El Rancho Grande Mexican Restaurant Kendall",
+      "address": "12881 N KENDALL DRIVE, Miami, FL 33186",
+      "county": "Miami-Dade",
+      "lat": 25.687037,
+      "lng": -80.40247,
+      "totalViolations": 15,
+      "hpViolations": 3,
+      "v36Count": 1,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "2332401",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "15 violations + 1x ceiling/vent (V36) + 3 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 160,
       "name": "Cantina Grill",
       "address": "14713 SW 42 ST #104, Miami, FL 33185",
       "county": "Miami-Dade",
@@ -4151,7 +4811,67 @@
       ]
     },
     {
-      "id": 139,
+      "id": 161,
+      "name": "Tropical Smoothie",
+      "address": "13550 SW 120 ST, Miami, FL 33186",
+      "county": "Miami-Dade",
+      "lat": 25.656337,
+      "lng": -80.413903,
+      "totalViolations": 18,
+      "hpViolations": 2,
+      "v36Count": 2,
+      "disposition": "Warning Issued",
+      "priority": "WARM",
+      "license": "2332756",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "18 violations + 2x ceiling/vent (V36) + 2 high-priority + warning issued",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Warning Issued"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "name": "Red Lobster #6373",
+      "address": "11550 SW 88 ST, Miami, FL 33176",
+      "county": "Miami-Dade",
+      "lat": 25.68648,
+      "lng": -80.380213,
+      "totalViolations": 12,
+      "hpViolations": 4,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2332954",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "12 violations + 1x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 163,
       "name": "Chill N Kendall Place",
       "address": "9065 SW 107 AVE, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -4181,7 +4901,7 @@
       ]
     },
     {
-      "id": 140,
+      "id": 164,
       "name": "Aiko & Mumu",
       "address": "2506 NE 2 AVE, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -4211,7 +4931,7 @@
       ]
     },
     {
-      "id": 141,
+      "id": 165,
       "name": "The Plantisserie",
       "address": "7316 NE 2 AVE, 102, Miami, FL 33138",
       "county": "Miami-Dade",
@@ -4241,7 +4961,7 @@
       ]
     },
     {
-      "id": 142,
+      "id": 166,
       "name": "Maxwell Bros",
       "address": "17395 S DIXIE HWY, Palmetto Bay, FL 33157",
       "county": "Miami-Dade",
@@ -4271,7 +4991,7 @@
       ]
     },
     {
-      "id": 143,
+      "id": 167,
       "name": "Bodega Taqueria Y Tequila",
       "address": "3419 MAIN HWY, Miami, FL 33133",
       "county": "Miami-Dade",
@@ -4301,7 +5021,7 @@
       ]
     },
     {
-      "id": 144,
+      "id": 168,
       "name": "Happys Stork Lounge & Liqour Store/Rasoi Indian Kitchen",
       "address": "1624 79 ST CSWY, North Bay Village, FL 33141",
       "county": "Miami-Dade",
@@ -4331,7 +5051,7 @@
       ]
     },
     {
-      "id": 145,
+      "id": 169,
       "name": "Chick-Fil-A Florida City",
       "address": "326 SE 1ST AVE, Florida City, FL 33034",
       "county": "Miami-Dade",
@@ -4361,7 +5081,7 @@
       ]
     },
     {
-      "id": 146,
+      "id": 170,
       "name": "Antonio'S Pizza Rant",
       "address": "13718 W SR 84, Davie, FL 33325",
       "county": "Broward",
@@ -4391,7 +5111,7 @@
       ]
     },
     {
-      "id": 147,
+      "id": 171,
       "name": "Musashi Thai And Sushi Restaraunt",
       "address": "6241 N FEDERAL HWY, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -4421,7 +5141,7 @@
       ]
     },
     {
-      "id": 148,
+      "id": 172,
       "name": "La Forketta",
       "address": "1255 S POWERLINE RD, Pompano Beach, FL 33069",
       "county": "Broward",
@@ -4451,7 +5171,7 @@
       ]
     },
     {
-      "id": 149,
+      "id": 173,
       "name": "Family Kitchen Restaurant And Catering",
       "address": "3134 W COMMERCIAL BLVD, Fort Lauderdale, FL 33309",
       "county": "Broward",
@@ -4481,7 +5201,7 @@
       ]
     },
     {
-      "id": 150,
+      "id": 174,
       "name": "Scooters Fun Foods&Spirits Inc",
       "address": "8913 SE BRIDGE RD, Hobe Sound, FL 33455-5312",
       "county": "Martin",
@@ -4511,7 +5231,7 @@
       ]
     },
     {
-      "id": 151,
+      "id": 175,
       "name": "Atlantic Sushi",
       "address": "14812 S MILITARY TRL, Delray Beach, FL 33484",
       "county": "Palm Beach",
@@ -4541,7 +5261,37 @@
       ]
     },
     {
-      "id": 152,
+      "id": 176,
+      "name": "Avocado Cantina",
+      "address": "11701 LAKE VICTORIA AVE, STE 4105, Palm Beach Gardens, FL 33410",
+      "county": "Palm Beach",
+      "lat": 26.846553,
+      "lng": -80.09268,
+      "totalViolations": 9,
+      "hpViolations": 5,
+      "v36Count": 1,
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "6021870",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "9 violations + 1x ceiling/vent (V36) + 5 high-priority + administrative complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Administrative complaint recommended"
+        },
+        {
+          "description": "5 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 177,
       "name": "Versailles Rest",
       "address": "3555 SW 8 ST, Miami, FL 331354109",
       "county": "Miami-Dade",
@@ -4571,7 +5321,37 @@
       ]
     },
     {
-      "id": 153,
+      "id": 178,
+      "name": "Tani Thai By Rin",
+      "address": "12269 S DIXIE HWY, Pinecrest, FL 33156",
+      "county": "Miami-Dade",
+      "lat": 25.656567,
+      "lng": -80.328167,
+      "totalViolations": 20,
+      "hpViolations": 1,
+      "v36Count": 3,
+      "disposition": "Call Back - Complied",
+      "priority": "WARM",
+      "license": "2317060",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "20 violations + 3x ceiling/vent (V36) + 1 high-priority + call back - complied",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Call Back - Complied"
+        },
+        {
+          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 179,
       "name": "Front Porch Cafe",
       "address": "918 OCEAN DR  UNIT CU-1, Miami Beach, FL 33139",
       "county": "Miami-Dade",
@@ -4601,7 +5381,7 @@
       ]
     },
     {
-      "id": 154,
+      "id": 180,
       "name": "Polo Norte",
       "address": "7360 SW 24 UNIT 1, Miami, FL 33155",
       "county": "Miami-Dade",
@@ -4631,7 +5411,7 @@
       ]
     },
     {
-      "id": 155,
+      "id": 181,
       "name": "Subway",
       "address": "11402 NW 41 STREET SUITE 103, Miami, FL 33178",
       "county": "Miami-Dade",
@@ -4661,7 +5441,37 @@
       ]
     },
     {
-      "id": 156,
+      "id": 182,
+      "name": "Osteria Positano",
+      "address": "1200 COLLINS AVE, Miami Beach, FL 33139",
+      "county": "Miami-Dade",
+      "lat": 25.782909,
+      "lng": -80.131264,
+      "totalViolations": 14,
+      "hpViolations": 3,
+      "v36Count": 3,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2332673",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "14 violations + 3x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 183,
       "name": "Andreas Cafeteria & Coffee Shop",
       "address": "16679 NE 19 AVE, North Miami Beach, FL 33162",
       "county": "Miami-Dade",
@@ -4691,7 +5501,37 @@
       ]
     },
     {
-      "id": 157,
+      "id": 184,
+      "name": "Rinconcito El Chele",
+      "address": "11735 SW 147 AVE STE 38, Miami, FL 33196",
+      "county": "Miami-Dade",
+      "lat": 25.657517,
+      "lng": -80.432004,
+      "totalViolations": 14,
+      "hpViolations": 3,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2333873",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "14 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 185,
       "name": "Fritanga Nica Grill",
       "address": "20505  S DIXIE HWY, Miami, FL 33189",
       "county": "Miami-Dade",
@@ -4721,7 +5561,7 @@
       ]
     },
     {
-      "id": 158,
+      "id": 186,
       "name": "Yume Llc",
       "address": "18515 S DIXIE HWY, Cutler Bay, FL 33157",
       "county": "Miami-Dade",
@@ -4751,7 +5591,7 @@
       ]
     },
     {
-      "id": 159,
+      "id": 187,
       "name": "Sweet Bubble",
       "address": "20505 S DIXIE HWY K1904, Cutler Bay, FL 33189",
       "county": "Miami-Dade",
@@ -4781,7 +5621,37 @@
       ]
     },
     {
-      "id": 160,
+      "id": 188,
+      "name": "Beach Bar & Grill",
+      "address": "1 DUVAL ST, Key West, FL 33040",
+      "county": "Monroe",
+      "lat": 24.560639,
+      "lng": -81.806318,
+      "totalViolations": 17,
+      "hpViolations": 2,
+      "v36Count": 5,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "5401193",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "17 violations + 5x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 5x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 189,
       "name": "The Jerk",
       "address": "508 SOUTHARD UNIT 101, Key West, FL 33040",
       "county": "Monroe",
@@ -4811,7 +5681,7 @@
       ]
     },
     {
-      "id": 161,
+      "id": 190,
       "name": "Disalvo'S Pizza",
       "address": "4190 N 46 AVE, Hollywood, FL 33021",
       "county": "Broward",
@@ -4841,7 +5711,7 @@
       ]
     },
     {
-      "id": 162,
+      "id": 191,
       "name": "Michael'S Cafe Bistro",
       "address": "2304 NE 62 ST, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -4871,7 +5741,7 @@
       ]
     },
     {
-      "id": 163,
+      "id": 192,
       "name": "Cabana 28",
       "address": "6351 N ANDREWS AVE, Fort Lauderdale, FL 33309",
       "county": "Broward",
@@ -4901,7 +5771,7 @@
       ]
     },
     {
-      "id": 164,
+      "id": 193,
       "name": "Malulo'S International Seafood Inc",
       "address": "900 E ATLANTIC BLVD STE #1, Pompano Beach, FL 33060",
       "county": "Broward",
@@ -4931,7 +5801,7 @@
       ]
     },
     {
-      "id": 165,
+      "id": 194,
       "name": "Wing Loon Chinese Food Takeout",
       "address": "3520 N ANDREWS AVE, Oakland Park, FL 33309",
       "county": "Broward",
@@ -4961,7 +5831,7 @@
       ]
     },
     {
-      "id": 166,
+      "id": 195,
       "name": "Zona Blu Italian Deli & Restaurant",
       "address": "189 WESTON RD, Weston, FL 33326",
       "county": "Broward",
@@ -4991,7 +5861,7 @@
       ]
     },
     {
-      "id": 167,
+      "id": 196,
       "name": "Pdq 1010 Oakland Park",
       "address": "3359 N FEDERAL HWY, Oakland Park, FL 33306",
       "county": "Broward",
@@ -5021,7 +5891,7 @@
       ]
     },
     {
-      "id": 168,
+      "id": 197,
       "name": "Bravo Peruvian Kitchen",
       "address": "9711 W  SAMPLE RD, Coral Springs, FL 33065",
       "county": "Broward",
@@ -5051,7 +5921,7 @@
       ]
     },
     {
-      "id": 169,
+      "id": 198,
       "name": "Casting Caribbean Resto Llc",
       "address": "209 SE 2 AVE, Delray Beach, FL 33483",
       "county": "Palm Beach",
@@ -5081,7 +5951,7 @@
       ]
     },
     {
-      "id": 170,
+      "id": 199,
       "name": "Yens Kitchen",
       "address": "7364 LAKE WORTH RD, Lake Worth, FL 33467",
       "county": "Palm Beach",
@@ -5111,7 +5981,7 @@
       ]
     },
     {
-      "id": 171,
+      "id": 200,
       "name": "Los Martin Cafeteria Rest",
       "address": "1636 W 33 PL, Hialeah, FL 330124514",
       "county": "Miami-Dade",
@@ -5141,7 +6011,7 @@
       ]
     },
     {
-      "id": 172,
+      "id": 201,
       "name": "Banquet",
       "address": "100 CHOPIN PLAZA, Miami, FL 33131",
       "county": "Miami-Dade",
@@ -5171,7 +6041,7 @@
       ]
     },
     {
-      "id": 173,
+      "id": 202,
       "name": "Morro Castle",
       "address": "1201 W 44 PL, Hialeah, FL 330123331",
       "county": "Miami-Dade",
@@ -5201,7 +6071,7 @@
       ]
     },
     {
-      "id": 174,
+      "id": 203,
       "name": "Corbetts Sports Bar & Grill",
       "address": "12721 S DIXIE HWY, Pinecrest, FL 33156",
       "county": "Miami-Dade",
@@ -5231,7 +6101,37 @@
       ]
     },
     {
-      "id": 175,
+      "id": 204,
+      "name": "El Novillo Restaurant",
+      "address": "6830 SW 40 ST, Miami, FL 331553708",
+      "county": "Miami-Dade",
+      "lat": 25.733274,
+      "lng": -80.305524,
+      "totalViolations": 10,
+      "hpViolations": 4,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2320536",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "10 violations + 2x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 205,
       "name": "The Garden On 78 St Restaurant",
       "address": "197 NE 78 ST, Miami, FL 33138",
       "county": "Miami-Dade",
@@ -5261,7 +6161,7 @@
       ]
     },
     {
-      "id": 176,
+      "id": 206,
       "name": "Rinconcito Cubano Miller",
       "address": "14744 SW 56 ST, Miami, FL 33185",
       "county": "Miami-Dade",
@@ -5291,7 +6191,7 @@
       ]
     },
     {
-      "id": 177,
+      "id": 207,
       "name": "Coral Bagels",
       "address": "2750 SW 26 AVE #B, Miami, FL 33133",
       "county": "Miami-Dade",
@@ -5321,7 +6221,7 @@
       ]
     },
     {
-      "id": 178,
+      "id": 208,
       "name": "Master'S Deli Pizzeria",
       "address": "1720 ALTON RD, Miami Beach, FL 331392412",
       "county": "Miami-Dade",
@@ -5351,7 +6251,7 @@
       ]
     },
     {
-      "id": 179,
+      "id": 209,
       "name": "Cafeteria Tonita",
       "address": "1625 PALM AVE STE 4, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -5381,7 +6281,7 @@
       ]
     },
     {
-      "id": 180,
+      "id": 210,
       "name": "Express Cafeteria",
       "address": "8670 SW 137 CT, Miami, FL 33183",
       "county": "Miami-Dade",
@@ -5411,7 +6311,67 @@
       ]
     },
     {
-      "id": 181,
+      "id": 211,
+      "name": "Sokai Sushi Bar Kendall",
+      "address": "11735 SW 147 AVE UNIT 36, Miami, FL 33196",
+      "county": "Miami-Dade",
+      "lat": 25.657517,
+      "lng": -80.432004,
+      "totalViolations": 13,
+      "hpViolations": 3,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2334108",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "name": "Friends Market & Bistro",
+      "address": "31 SE 6 ST UNIT CU, Miami, FL 33131",
+      "county": "Miami-Dade",
+      "lat": 25.768307,
+      "lng": -80.191548,
+      "totalViolations": 16,
+      "hpViolations": 2,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2335039",
+      "latest_inspection": "08/25/2026",
+      "outreach_hook": "16 violations + 2x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/25/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 213,
       "name": "Bageland And More",
       "address": "1420 CORAL RIDGE DR, Coral Springs, FL 33071",
       "county": "Broward",
@@ -5441,7 +6401,7 @@
       ]
     },
     {
-      "id": 182,
+      "id": 214,
       "name": "St Bess Kitchen",
       "address": "8318 W OAKLAND PARK BLVD, Sunrise, FL 33351",
       "county": "Broward",
@@ -5471,7 +6431,7 @@
       ]
     },
     {
-      "id": 183,
+      "id": 215,
       "name": "Kub Kao Thai And  Sushi",
       "address": "4777 S UNIVERSITY DR, Davie, FL 33328",
       "county": "Broward",
@@ -5501,7 +6461,7 @@
       ]
     },
     {
-      "id": 184,
+      "id": 216,
       "name": "Poke Ice",
       "address": "6214 N FEDERAL HWY, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -5531,7 +6491,7 @@
       ]
     },
     {
-      "id": 185,
+      "id": 217,
       "name": "Foodeyez Caribbean Cuisine Corp",
       "address": "6268 W SAMPLE RD STE 407, Coral Springs, FL 33067",
       "county": "Broward",
@@ -5561,7 +6521,7 @@
       ]
     },
     {
-      "id": 186,
+      "id": 218,
       "name": "Pinkacake Usa Llc",
       "address": "2304 NE 62 ST, Fort Lauderdale, FL 33308",
       "county": "Broward",
@@ -5591,37 +6551,37 @@
       ]
     },
     {
-      "id": 187,
-      "name": "Millers Cafeteria",
-      "address": "13439 SW 56 ST, Miami, FL 331756117",
-      "county": "Miami-Dade",
-      "lat": 25.714568,
-      "lng": -80.411879,
-      "totalViolations": 12,
-      "hpViolations": 3,
+      "id": 219,
+      "name": "Rok Prime Korean Bbq Restaurant",
+      "address": "1727 S FEDERAL HWY, Boynton Beach, FL 33435",
+      "county": "Palm Beach",
+      "lat": 26.51357,
+      "lng": -80.059093,
+      "totalViolations": 10,
+      "hpViolations": 4,
       "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2317451",
-      "latest_inspection": "07/01/2026",
-      "outreach_hook": "12 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "disposition": "Administrative complaint recommended",
+      "priority": "HOT",
+      "license": "6023048",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 4 high-priority + administrative complaint recommended",
       "violations": [
         {
           "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
           "severity": "High Priority",
-          "date": "07/01/2026",
-          "disposition": "Inspection Completed - No Further Action"
+          "date": "08/26/2026",
+          "disposition": "Administrative complaint recommended"
         },
         {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
           "severity": "High Priority",
-          "date": "07/01/2026",
+          "date": "08/26/2026",
           "disposition": ""
         }
       ]
     },
     {
-      "id": 188,
+      "id": 220,
       "name": "S & N Vegetables",
       "address": "360 W 29 ST, Hialeah, FL 330125708",
       "county": "Miami-Dade",
@@ -5651,7 +6611,7 @@
       ]
     },
     {
-      "id": 189,
+      "id": 221,
       "name": "Siam Bistro",
       "address": "7348 SW 117 AVE, Miami, FL 33183",
       "county": "Miami-Dade",
@@ -5681,7 +6641,7 @@
       ]
     },
     {
-      "id": 190,
+      "id": 222,
       "name": "El Cantones Rest",
       "address": "11865 SW 26 ST E3, Miami, FL 331752400",
       "county": "Miami-Dade",
@@ -5711,7 +6671,7 @@
       ]
     },
     {
-      "id": 191,
+      "id": 223,
       "name": "Ranchito Mi Peru Iv",
       "address": "9636 SW 77 AVE, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -5741,7 +6701,7 @@
       ]
     },
     {
-      "id": 192,
+      "id": 224,
       "name": "Pollo Tropical #19",
       "address": "985 N HOMESTEAD BLVD, Homestead, FL 33030",
       "county": "Miami-Dade",
@@ -5771,7 +6731,7 @@
       ]
     },
     {
-      "id": 193,
+      "id": 225,
       "name": "Machupicchu Restaurant",
       "address": "10855 SW 72 ST STE# 27, Miami, FL 33173",
       "county": "Miami-Dade",
@@ -5801,7 +6761,7 @@
       ]
     },
     {
-      "id": 194,
+      "id": 226,
       "name": "Taipa Peruvian Restaurant",
       "address": "3855 SW 137 AVE STE 3, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -5831,7 +6791,7 @@
       ]
     },
     {
-      "id": 195,
+      "id": 227,
       "name": "Panizza",
       "address": "1229 LINCOLN RD, Miami Beach, FL 33139",
       "county": "Miami-Dade",
@@ -5861,7 +6821,7 @@
       ]
     },
     {
-      "id": 196,
+      "id": 228,
       "name": "Dynasty Buffet",
       "address": "1656 NE MIAMI GARDENS DR, North Miami Beach, FL 33179",
       "county": "Miami-Dade",
@@ -5891,7 +6851,7 @@
       ]
     },
     {
-      "id": 197,
+      "id": 229,
       "name": "Fritanga Florida City Inc",
       "address": "33497 S DIXIE HWY UNIT 105, Florida City, FL 33034",
       "county": "Miami-Dade",
@@ -5921,7 +6881,7 @@
       ]
     },
     {
-      "id": 198,
+      "id": 230,
       "name": "Latin Cafe On The Beach",
       "address": "441 41 ST, Miami Beach, FL 33140",
       "county": "Miami-Dade",
@@ -5951,7 +6911,7 @@
       ]
     },
     {
-      "id": 199,
+      "id": 231,
       "name": "Captain Fish & Chicken",
       "address": "19747 NW 37 AVE, Miami Gardens, FL 33056",
       "county": "Miami-Dade",
@@ -5981,37 +6941,7 @@
       ]
     },
     {
-      "id": 200,
-      "name": "Jersey Mike'S Subs #13157",
-      "address": "12536 SW 120TH ST, Kendall, FL 33186",
-      "county": "Miami-Dade",
-      "lat": 25.656544,
-      "lng": -80.396734,
-      "totalViolations": 15,
-      "hpViolations": 2,
-      "v36Count": 2,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2330715",
-      "latest_inspection": "08/18/2026",
-      "outreach_hook": "15 violations + 2x ceiling/vent (V36) + 2 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/18/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 201,
+      "id": 232,
       "name": "Pizza Power",
       "address": "7400 SW 57 AVE UNIT 2 & 3, Miami, FL 33143",
       "county": "Miami-Dade",
@@ -6041,7 +6971,7 @@
       ]
     },
     {
-      "id": 202,
+      "id": 233,
       "name": "Los Leones",
       "address": "1699 NE 163  ST, North Miami Beach, FL 33162",
       "county": "Miami-Dade",
@@ -6071,7 +7001,7 @@
       ]
     },
     {
-      "id": 203,
+      "id": 234,
       "name": "Fuddruckers Restaurant",
       "address": "14875 S DIXIE HWY, Miami, FL 33176",
       "county": "Miami-Dade",
@@ -6101,7 +7031,7 @@
       ]
     },
     {
-      "id": 204,
+      "id": 235,
       "name": "Hialeah Reys Pizza 2",
       "address": "1166 W 68 ST, Hialeah, FL 33012",
       "county": "Miami-Dade",
@@ -6131,7 +7061,37 @@
       ]
     },
     {
-      "id": 205,
+      "id": 236,
+      "name": "El Palacio De Los Frijoles",
+      "address": "15512 SW 72 ST, Miami, FL 33193",
+      "county": "Miami-Dade",
+      "lat": 25.698949,
+      "lng": -80.443388,
+      "totalViolations": 15,
+      "hpViolations": 2,
+      "v36Count": 3,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2334794",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "15 violations + 3x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 237,
       "name": "Latin Churro",
       "address": "3300 W 84 STREET BAY 1, Hialeah, FL 33018",
       "county": "Miami-Dade",
@@ -6161,7 +7121,37 @@
       ]
     },
     {
-      "id": 206,
+      "id": 238,
+      "name": "Panaderia Colombiana Mi Cali",
+      "address": "2350 W 60 ST  UNIT 14, Hialeah, FL 33016",
+      "county": "Miami-Dade",
+      "lat": 25.876947,
+      "lng": -80.330179,
+      "totalViolations": 18,
+      "hpViolations": 1,
+      "v36Count": 6,
+      "disposition": "Call Back - Admin. complaint recommended",
+      "priority": "WARM",
+      "license": "2335491",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "18 violations + 6x ceiling/vent (V36) + 1 high-priority + call back - admin. complaint recommended",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 6x.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Call Back - Admin. complaint recommended"
+        },
+        {
+          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 239,
       "name": "La Embajada Colombiana Restaurant",
       "address": "18400 NW 75 PL UNIT 113, Hialeah, FL 33015",
       "county": "Miami-Dade",
@@ -6191,7 +7181,7 @@
       ]
     },
     {
-      "id": 207,
+      "id": 240,
       "name": "El Machetico",
       "address": "3399 NW 72 AVE STE 104, Miami, FL 33122",
       "county": "Miami-Dade",
@@ -6221,7 +7211,7 @@
       ]
     },
     {
-      "id": 208,
+      "id": 241,
       "name": "The Thousand Sunny",
       "address": "9545 S DIXIE HWY, Pinecrest, FL 33156",
       "county": "Miami-Dade",
@@ -6251,7 +7241,7 @@
       ]
     },
     {
-      "id": 209,
+      "id": 242,
       "name": "Geiger Key Fish Camp",
       "address": "5 GEIGER RD., Key West, FL 33040",
       "county": "Monroe",
@@ -6281,7 +7271,7 @@
       ]
     },
     {
-      "id": 210,
+      "id": 243,
       "name": "Two Friends Patio Restaurant",
       "address": "512 FRONT STREET, Key West, FL 33040",
       "county": "Monroe",
@@ -6311,7 +7301,7 @@
       ]
     },
     {
-      "id": 211,
+      "id": 244,
       "name": "El Meson De Pepe",
       "address": "410 WALL ST, Key West, FL 33040",
       "county": "Monroe",
@@ -6341,7 +7331,37 @@
       ]
     },
     {
-      "id": 212,
+      "id": 245,
+      "name": "Docs On Duval",
+      "address": "708 DUVAL ST, DOWNSTAIRS, Key West, FL 33040",
+      "county": "Monroe",
+      "lat": 24.553702,
+      "lng": -81.801284,
+      "totalViolations": 15,
+      "hpViolations": 2,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "5428196",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "15 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 246,
       "name": "Circus (The)",
       "address": "1461 SW 30 AVE, Pompano Beach, FL 33069-1126",
       "county": "Broward",
@@ -6371,7 +7391,7 @@
       ]
     },
     {
-      "id": 213,
+      "id": 247,
       "name": "Big Louies Pizzeria Cypress Creek",
       "address": "3095 W CYPRESS CREEK RD, Fort Lauderdale, FL 33309",
       "county": "Broward",
@@ -6401,7 +7421,7 @@
       ]
     },
     {
-      "id": 214,
+      "id": 248,
       "name": "Jose'S Uncle Al'S Sports Cafe",
       "address": "15846 W SR 84, Sunrise, FL 33326",
       "county": "Broward",
@@ -6431,7 +7451,7 @@
       ]
     },
     {
-      "id": 215,
+      "id": 249,
       "name": "1040 Cafe",
       "address": "2601 W BROWARD BLVD, Fort Lauderdale, FL 33312",
       "county": "Broward",
@@ -6461,7 +7481,7 @@
       ]
     },
     {
-      "id": 216,
+      "id": 250,
       "name": "El Rey De La Medialuna Restaurant Llc",
       "address": "904 N 30 AVE, Hollywood, FL 33021",
       "county": "Broward",
@@ -6491,7 +7511,7 @@
       ]
     },
     {
-      "id": 217,
+      "id": 251,
       "name": "Zuccarelli East",
       "address": "1340 N FEDERAL HWY, Pompano Beach, FL 33062",
       "county": "Broward",
@@ -6521,7 +7541,7 @@
       ]
     },
     {
-      "id": 218,
+      "id": 252,
       "name": "Sal'S Restaurant & Pizzeria",
       "address": "13875 W SUNRISE BAY F, Sunrise, FL 33323",
       "county": "Broward",
@@ -6551,37 +7571,7 @@
       ]
     },
     {
-      "id": 219,
-      "name": "La Rural Argentine Steakhouse",
-      "address": "2346 - 2350 WESTON RD, Weston, FL 33326",
-      "county": "Broward",
-      "lat": 26.089564,
-      "lng": -80.371753,
-      "totalViolations": 12,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "1623918",
-      "latest_inspection": "07/28/2026",
-      "outreach_hook": "12 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/28/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/28/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 220,
+      "id": 253,
       "name": "Voila Bakery And Take-Out Restaurant",
       "address": "37 S POMPANO PKWY, Pompano Beach, FL 33069",
       "county": "Broward",
@@ -6611,7 +7601,7 @@
       ]
     },
     {
-      "id": 221,
+      "id": 254,
       "name": "Kentucky Fried Chicken",
       "address": "959 S MAIN ST, Belle Glade, FL 33430-4905",
       "county": "Palm Beach",
@@ -6641,7 +7631,7 @@
       ]
     },
     {
-      "id": 222,
+      "id": 255,
       "name": "Vic And Angelo'Â¿S",
       "address": "290 E ATLANTIC AVE, Delray Beach, FL 33444",
       "county": "Palm Beach",
@@ -6671,7 +7661,7 @@
       ]
     },
     {
-      "id": 223,
+      "id": 256,
       "name": "East End Cafe",
       "address": "7000 W ATLANTIC AVE, Delray Beach, FL 33446",
       "county": "Palm Beach",
@@ -6701,7 +7691,7 @@
       ]
     },
     {
-      "id": 224,
+      "id": 257,
       "name": "Yes! Cafe 71 St - Breakfast And Burger Joint",
       "address": "601 71 ST, Miami Beach, FL 33141",
       "county": "Miami-Dade",
@@ -6731,7 +7721,7 @@
       ]
     },
     {
-      "id": 225,
+      "id": 258,
       "name": "Los Tacos Del Chef Pancho",
       "address": "4661 NW 199 ST, Miami Gardens, FL 33055",
       "county": "Miami-Dade",
@@ -6761,7 +7751,37 @@
       ]
     },
     {
-      "id": 226,
+      "id": 259,
+      "name": "Joel Restaurant",
+      "address": "3300 NW S RIVER DR, Miami, FL 33142",
+      "county": "Miami-Dade",
+      "lat": 25.797516,
+      "lng": -80.248447,
+      "totalViolations": 11,
+      "hpViolations": 3,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2317251",
+      "latest_inspection": "08/27/2026",
+      "outreach_hook": "11 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/27/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 260,
       "name": "Casola'S Pizzeria  And Sub Shop",
       "address": "2437 SW 17 AVE, Miami, FL 33145",
       "county": "Miami-Dade",
@@ -6791,7 +7811,7 @@
       ]
     },
     {
-      "id": 227,
+      "id": 261,
       "name": "La Morenita Mexican Grill Inc",
       "address": "29607 SW 162  AVE, Homestead, FL 33033",
       "county": "Miami-Dade",
@@ -6821,7 +7841,7 @@
       ]
     },
     {
-      "id": 228,
+      "id": 262,
       "name": "Magic Wok",
       "address": "10201 HAMMOCKS BLVD APT#142, Miami, FL 33196",
       "county": "Miami-Dade",
@@ -6851,7 +7871,7 @@
       ]
     },
     {
-      "id": 229,
+      "id": 263,
       "name": "Rinconcito Latino Cafe & Restaurant",
       "address": "12899 SW 42 ST, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -6881,7 +7901,7 @@
       ]
     },
     {
-      "id": 230,
+      "id": 264,
       "name": "Chop Suey International Chinese Restaurant",
       "address": "90 SW 27 AVE, Miami, FL 33135",
       "county": "Miami-Dade",
@@ -6911,7 +7931,7 @@
       ]
     },
     {
-      "id": 231,
+      "id": 265,
       "name": "Hialeah Latin America Rest",
       "address": "675 E 9 ST, Hialeah, FL 330104523",
       "county": "Miami-Dade",
@@ -6941,7 +7961,7 @@
       ]
     },
     {
-      "id": 232,
+      "id": 266,
       "name": "New China Restaurant",
       "address": "9632 SW 77 AVE, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -6965,7 +7985,7 @@
       ]
     },
     {
-      "id": 233,
+      "id": 267,
       "name": "Los Catrachos",
       "address": "755 W FLAGLER ST, Miami, FL 33130",
       "county": "Miami-Dade",
@@ -6995,7 +8015,7 @@
       ]
     },
     {
-      "id": 234,
+      "id": 268,
       "name": "El Rinconcito Latino",
       "address": "10481 SW 40 ST, Miami, FL 33165",
       "county": "Miami-Dade",
@@ -7025,7 +8045,31 @@
       ]
     },
     {
-      "id": 235,
+      "id": 269,
+      "name": "Grand Bay Club",
+      "address": "425 GRAND BAY DR N, Key Biscayne, FL 33149",
+      "county": "Miami-Dade",
+      "lat": 25.692486,
+      "lng": -80.161058,
+      "totalViolations": 20,
+      "hpViolations": 0,
+      "v36Count": 3,
+      "disposition": "Call Back - Extension given, pending",
+      "priority": "WARM",
+      "license": "2326514",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "20 violations + 3x ceiling/vent (V36) + call back - extension given, pending",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Call Back - Extension given, pending"
+        }
+      ]
+    },
+    {
+      "id": 270,
       "name": "Dennys Restaurant",
       "address": "3850 SW 137TH AVENUE, Miami, FL 33175",
       "county": "Miami-Dade",
@@ -7055,7 +8099,7 @@
       ]
     },
     {
-      "id": 236,
+      "id": 271,
       "name": "Superlatinos Cafe Restaurante Corp",
       "address": "11356 QUAIL ROOST DR, Miami, FL 33157",
       "county": "Miami-Dade",
@@ -7085,7 +8129,37 @@
       ]
     },
     {
-      "id": 237,
+      "id": 272,
+      "name": "Mcdonald'S #31341",
+      "address": "2880 NE 8 ST, Homestead, FL 33030",
+      "county": "Miami-Dade",
+      "lat": 25.477325,
+      "lng": -80.449849,
+      "totalViolations": 14,
+      "hpViolations": 2,
+      "v36Count": 2,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2331344",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "14 violations + 2x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 273,
       "name": "Lime Fresh Mexican Grill",
       "address": "9005 SW 72 PL, Miami, FL 33156",
       "county": "Miami-Dade",
@@ -7115,7 +8189,97 @@
       ]
     },
     {
-      "id": 238,
+      "id": 274,
+      "name": "Angelina'S Coffee And Juice",
+      "address": "3451 NE 1 AVE STE 102B, Miami, FL 33137",
+      "county": "Miami-Dade",
+      "lat": 25.809101,
+      "lng": -80.19244,
+      "totalViolations": 14,
+      "hpViolations": 2,
+      "v36Count": 3,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2332755",
+      "latest_inspection": "08/28/2026",
+      "outreach_hook": "14 violations + 3x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/28/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Bombay Darbar Indian Restaurant",
+      "address": "2901 FLORIDA AVE STE 810, Miami, FL 33133",
+      "county": "Miami-Dade",
+      "lat": 25.729151,
+      "lng": -80.240576,
+      "totalViolations": 17,
+      "hpViolations": 1,
+      "v36Count": 5,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2333209",
+      "latest_inspection": "08/24/2026",
+      "outreach_hook": "17 violations + 5x ceiling/vent (V36) + 1 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 5x.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/24/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 276,
+      "name": "El Palacio De Los Jugos",
+      "address": "1275 W 49 ST, Hialeah, FL 33012",
+      "county": "Miami-Dade",
+      "lat": 25.866665,
+      "lng": -80.308054,
+      "totalViolations": 8,
+      "hpViolations": 4,
+      "v36Count": 1,
+      "disposition": "Inspection Completed - No Further Action",
+      "priority": "WARM",
+      "license": "2333796",
+      "latest_inspection": "08/26/2026",
+      "outreach_hook": "8 violations + 1x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
+      "violations": [
+        {
+          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": "Inspection Completed - No Further Action"
+        },
+        {
+          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
+          "severity": "High Priority",
+          "date": "08/26/2026",
+          "disposition": ""
+        }
+      ]
+    },
+    {
+      "id": 277,
       "name": "Mindy Supermarket",
       "address": "2602 PALM AVE, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -7145,7 +8309,7 @@
       ]
     },
     {
-      "id": 239,
+      "id": 278,
       "name": "Donde Juana",
       "address": "5205 NE 2 CT, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -7175,7 +8339,7 @@
       ]
     },
     {
-      "id": 240,
+      "id": 279,
       "name": "La Carne Asada",
       "address": "1680 PALM AVE, Hialeah, FL 33010",
       "county": "Miami-Dade",
@@ -7205,7 +8369,7 @@
       ]
     },
     {
-      "id": 241,
+      "id": 280,
       "name": "Pollo Tropical #182",
       "address": "404 SE 1 AVE, Florida City, FL 33034",
       "county": "Miami-Dade",
@@ -7235,7 +8399,7 @@
       ]
     },
     {
-      "id": 242,
+      "id": 281,
       "name": "Smash House",
       "address": "1550 NE 164 ST, North Miami Beach, FL 33162",
       "county": "Miami-Dade",
@@ -7265,7 +8429,7 @@
       ]
     },
     {
-      "id": 243,
+      "id": 282,
       "name": "Las Vegas Cuban Cuisine",
       "address": "8550 NW 53RD STREET, SUITE B101, Doral, FL 33166",
       "county": "Miami-Dade",
@@ -7295,7 +8459,7 @@
       ]
     },
     {
-      "id": 244,
+      "id": 283,
       "name": "Lil Greenhouse Grill",
       "address": "1300 NW 3RD AVE, Miami, FL 33136",
       "county": "Miami-Dade",
@@ -7325,7 +8489,7 @@
       ]
     },
     {
-      "id": 245,
+      "id": 284,
       "name": "Gran Inka Gastrobar",
       "address": "11401 NW 12 ST STE E502, Miami, FL 33172",
       "county": "Miami-Dade",
@@ -7355,7 +8519,7 @@
       ]
     },
     {
-      "id": 246,
+      "id": 285,
       "name": "World Famous House Of Mac 7 Ave",
       "address": "1951 NW 7 AVE STE 190, Miami, FL 33136",
       "county": "Miami-Dade",
@@ -7385,7 +8549,7 @@
       ]
     },
     {
-      "id": 247,
+      "id": 286,
       "name": "Little Hen",
       "address": "3451 N.E. 1 AVE #100-102, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -7415,7 +8579,7 @@
       ]
     },
     {
-      "id": 248,
+      "id": 287,
       "name": "Kitchen + Kocktails By Kevin Kelley Miami",
       "address": "2838 NW 2 AVE, Miami, FL 33127",
       "county": "Miami-Dade",
@@ -7445,7 +8609,7 @@
       ]
     },
     {
-      "id": 249,
+      "id": 288,
       "name": "Jass Kitchen",
       "address": "190 NE 46 ST, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -7475,7 +8639,7 @@
       ]
     },
     {
-      "id": 250,
+      "id": 289,
       "name": "Chef Brian Catering",
       "address": "2404 SW 107 AVE, Miami, FL 33165",
       "county": "Miami-Dade",
@@ -7505,7 +8669,7 @@
       ]
     },
     {
-      "id": 251,
+      "id": 290,
       "name": "Moore Club Bev Co",
       "address": "4040 NE 2 AVE 2 FLOOR, Miami, FL 33137",
       "county": "Miami-Dade",
@@ -7535,7 +8699,7 @@
       ]
     },
     {
-      "id": 252,
+      "id": 291,
       "name": "Emissary",
       "address": "3308 MARY ST SUITE 109, Miami, FL 33133",
       "county": "Miami-Dade",
@@ -7565,7 +8729,7 @@
       ]
     },
     {
-      "id": 253,
+      "id": 292,
       "name": "New York Roma Pizza Grove",
       "address": "2985 MCFARLANE RD, Miami, FL 33133",
       "county": "Miami-Dade",
@@ -7595,7 +8759,7 @@
       ]
     },
     {
-      "id": 254,
+      "id": 293,
       "name": "Coyo Taco",
       "address": "401 BISCAYNE BLVD 1320, Miami, FL 33132",
       "county": "Miami-Dade",
@@ -7625,7 +8789,7 @@
       ]
     },
     {
-      "id": 255,
+      "id": 294,
       "name": "7 Mile Grill",
       "address": "1240 OVERSEAS HWY, Marathon, FL 33050",
       "county": "Monroe",
@@ -7655,7 +8819,7 @@
       ]
     },
     {
-      "id": 256,
+      "id": 295,
       "name": "Salute",
       "address": "1000 ATLANTIC BLVD, Key West, FL 33040",
       "county": "Monroe",
@@ -7680,1146 +8844,6 @@
           "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
           "severity": "High Priority",
           "date": "08/03/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 257,
-      "name": "High Tide",
-      "address": "99411 OVERSEAS HWY, Key Largo, FL 33037",
-      "county": "Monroe",
-      "lat": 25.091561,
-      "lng": -80.442516,
-      "totalViolations": 8,
-      "hpViolations": 4,
-      "v36Count": 1,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "5402785",
-      "latest_inspection": "07/29/2026",
-      "outreach_hook": "8 violations + 1x ceiling/vent (V36) + 4 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/29/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/29/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 258,
-      "name": "Yellowfin",
-      "address": "5950 PENINSULAR AVE, Key West, FL 33040",
-      "county": "Monroe",
-      "lat": 24.564707,
-      "lng": -81.729362,
-      "totalViolations": 14,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "5428313",
-      "latest_inspection": "08/04/2026",
-      "outreach_hook": "14 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/04/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/04/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 259,
-      "name": "Jj Cafe",
-      "address": "6045 NW 31 AVE, Fort Lauderdale, FL 33309",
-      "county": "Broward",
-      "lat": 26.200742,
-      "lng": -80.187967,
-      "totalViolations": 8,
-      "hpViolations": 4,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "1609215",
-      "latest_inspection": "07/21/2026",
-      "outreach_hook": "8 violations + 2x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/21/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/21/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 260,
-      "name": "New Wong'S Hollywood",
-      "address": "5664 WASHINGTON ST, Hollywood, FL 33023",
-      "county": "Broward",
-      "lat": 26.002579,
-      "lng": -80.200449,
-      "totalViolations": 11,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "1618756",
-      "latest_inspection": "08/19/2026",
-      "outreach_hook": "11 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 261,
-      "name": "Subway 55139",
-      "address": "12555 W SUNRISE BLVD, Sunrise, FL 33323",
-      "county": "Broward",
-      "lat": 26.145871,
-      "lng": -80.317123,
-      "totalViolations": 11,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "1623171",
-      "latest_inspection": "08/21/2026",
-      "outreach_hook": "11 violations + 1x ceiling/vent (V36) + 3 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/21/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/21/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 262,
-      "name": "Arepa Magnet Plus",
-      "address": "16644 SADDLE CLUB RD, Weston, FL 33326",
-      "county": "Broward",
-      "lat": 26.116082,
-      "lng": -80.375543,
-      "totalViolations": 11,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "1623682",
-      "latest_inspection": "08/05/2026",
-      "outreach_hook": "11 violations + 1x ceiling/vent (V36) + 3 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/05/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/05/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 263,
-      "name": "Pizza On The Beach",
-      "address": "107 COMMERCIAL BLVD, Laud By The Sea, FL 33308",
-      "county": "Broward",
-      "lat": 26.189943,
-      "lng": -80.09672,
-      "totalViolations": 17,
-      "hpViolations": 1,
-      "v36Count": 3,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "1624120",
-      "latest_inspection": "07/16/2026",
-      "outreach_hook": "17 violations + 3x ceiling/vent (V36) + 1 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
-          "severity": "High Priority",
-          "date": "07/16/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/16/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 264,
-      "name": "Golden Krust Caribbean Bakery & Grill",
-      "address": "2610 W BROWARD BLVD, Fort Lauderdale, FL 33312",
-      "county": "Broward",
-      "lat": 26.121478,
-      "lng": -80.176294,
-      "totalViolations": 11,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "1624411",
-      "latest_inspection": "07/24/2026",
-      "outreach_hook": "11 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/24/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/24/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 265,
-      "name": "Two Fat Guys",
-      "address": "7535 ENTERPRISE DR #52, Riviera Beach, FL 33404",
-      "county": "Palm Beach",
-      "lat": 26.786738,
-      "lng": -80.096582,
-      "totalViolations": 8,
-      "hpViolations": 4,
-      "v36Count": 1,
-      "disposition": "Call Back - Admin. complaint recommended",
-      "priority": "WARM",
-      "license": "6006762",
-      "latest_inspection": "08/14/2026",
-      "outreach_hook": "8 violations + 1x ceiling/vent (V36) + 4 high-priority + call back - admin. complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": "Call Back - Admin. complaint recommended"
-        },
-        {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 266,
-      "name": "China Wok",
-      "address": "3518 BROADWAY BLVD  UNIT E, Riviera Beach, FL 33404",
-      "county": "Palm Beach",
-      "lat": 26.791029,
-      "lng": -80.054257,
-      "totalViolations": 8,
-      "hpViolations": 4,
-      "v36Count": 1,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "6020963",
-      "latest_inspection": "08/14/2026",
-      "outreach_hook": "8 violations + 1x ceiling/vent (V36) + 4 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 267,
-      "name": "Sushi Sake",
-      "address": "7020 BERACASA WAY, Boca Raton, FL 33433",
-      "county": "Palm Beach",
-      "lat": 26.352192,
-      "lng": -80.154305,
-      "totalViolations": 11,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "6022630",
-      "latest_inspection": "08/17/2026",
-      "outreach_hook": "11 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 268,
-      "name": "Tropical Restaurant",
-      "address": "652 E 9 ST, Hialeah, FL 33010",
-      "county": "Miami-Dade",
-      "lat": 25.830391,
-      "lng": -80.268069,
-      "totalViolations": 16,
-      "hpViolations": 1,
-      "v36Count": 5,
-      "disposition": "Call Back - Extension given, pending",
-      "priority": "WARM",
-      "license": "2312196",
-      "latest_inspection": "08/08/2026",
-      "outreach_hook": "16 violations + 5x ceiling/vent (V36) + 1 high-priority + call back - extension given, pending",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 5x.",
-          "severity": "High Priority",
-          "date": "08/08/2026",
-          "disposition": "Call Back - Extension given, pending"
-        },
-        {
-          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/08/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 269,
-      "name": "Styx Sports Bar",
-      "address": "15346 WEST DIXIE HWY, Miami, FL 33162",
-      "county": "Miami-Dade",
-      "lat": 25.916837,
-      "lng": -80.161486,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Administrative complaint recommended",
-      "priority": "HOT",
-      "license": "2314027",
-      "latest_inspection": "07/14/2026",
-      "outreach_hook": "10 violations + 2x ceiling/vent (V36) + 3 high-priority + administrative complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": "Administrative complaint recommended"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 270,
-      "name": "Miami River Cafe",
-      "address": "350 NW 8 AVE, Miami, FL 33128",
-      "county": "Miami-Dade",
-      "lat": 25.777137,
-      "lng": -80.207901,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2316135",
-      "latest_inspection": "07/07/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/07/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/07/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 271,
-      "name": "Olivar 305",
-      "address": "1111 CRANDON BLVD, Key Biscayne, FL 33149",
-      "county": "Miami-Dade",
-      "lat": 25.683392,
-      "lng": -80.158263,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2317767",
-      "latest_inspection": "07/14/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 272,
-      "name": "Paraiso Tropical Pizza Cafe",
-      "address": "445 PALM AVE, Hialeah, FL 33010",
-      "county": "Miami-Dade",
-      "lat": 25.825801,
-      "lng": -80.28138,
-      "totalViolations": 16,
-      "hpViolations": 1,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2317793",
-      "latest_inspection": "08/17/2026",
-      "outreach_hook": "16 violations + 2x ceiling/vent (V36) + 1 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 273,
-      "name": "Eshu'S Cafe",
-      "address": "9090 NW S RIVER DR #1-3, Medley, FL 33166",
-      "county": "Miami-Dade",
-      "lat": 25.856447,
-      "lng": -80.326909,
-      "totalViolations": 16,
-      "hpViolations": 1,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2319474",
-      "latest_inspection": "07/07/2026",
-      "outreach_hook": "16 violations + 2x ceiling/vent (V36) + 1 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/07/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/07/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 274,
-      "name": "Mcdonald'S Corp",
-      "address": "11207 SW 152 ST, Miami, FL 331571101",
-      "county": "Miami-Dade",
-      "lat": 25.627209,
-      "lng": -80.375056,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2324819",
-      "latest_inspection": "07/13/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/13/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/13/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 275,
-      "name": "Atlantis Cafe Inc",
-      "address": "12 NW 1ST STREET, Miami, FL 33128",
-      "county": "Miami-Dade",
-      "lat": 25.775046,
-      "lng": -80.193815,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2325862",
-      "latest_inspection": "08/10/2026",
-      "outreach_hook": "10 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/10/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/10/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 276,
-      "name": "Lan Pan Asian Cafe",
-      "address": "8332 S DIXIE HWY, Miami, FL 33143",
-      "county": "Miami-Dade",
-      "lat": 25.693213,
-      "lng": -80.302982,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2327695",
-      "latest_inspection": "07/27/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/27/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/27/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 277,
-      "name": "Dennys",
-      "address": "11350 NW 41 STREET, Miami, FL 33178",
-      "county": "Miami-Dade",
-      "lat": 25.811579,
-      "lng": -80.379614,
-      "totalViolations": 7,
-      "hpViolations": 4,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2328378",
-      "latest_inspection": "07/10/2026",
-      "outreach_hook": "7 violations + 1x ceiling/vent (V36) + 4 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/10/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "4 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/10/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 278,
-      "name": "Nico'S Brothers Pizzeria",
-      "address": "8424  MILLS DR, Miami, FL 33183",
-      "county": "Miami-Dade",
-      "lat": 25.689304,
-      "lng": -80.386453,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2328720",
-      "latest_inspection": "08/04/2026",
-      "outreach_hook": "10 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/04/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/04/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 279,
-      "name": "Hotel Arya",
-      "address": "2889 MCFARLANE RD, Miami, FL 33133",
-      "county": "Miami-Dade",
-      "lat": 25.727309,
-      "lng": -80.241288,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 2,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2328777",
-      "latest_inspection": "07/15/2026",
-      "outreach_hook": "13 violations + 2x ceiling/vent (V36) + 2 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/15/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/15/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 280,
-      "name": "Chicken Stack Fire Grill",
-      "address": "16776 SW 88 ST, Miami, FL 33196",
-      "county": "Miami-Dade",
-      "lat": 25.685978,
-      "lng": -80.471052,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 3,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2331261",
-      "latest_inspection": "07/31/2026",
-      "outreach_hook": "10 violations + 3x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
-          "severity": "High Priority",
-          "date": "07/31/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/31/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 281,
-      "name": "Chifa Restaurant Pollo Don Jose",
-      "address": "1427 SW 107 AVE, Miami, FL 33174",
-      "county": "Miami-Dade",
-      "lat": 25.7558,
-      "lng": -80.368067,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 3,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2331428",
-      "latest_inspection": "08/13/2026",
-      "outreach_hook": "10 violations + 3x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 3x.",
-          "severity": "High Priority",
-          "date": "08/13/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/13/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 282,
-      "name": "El Parador",
-      "address": "12758 SW 88 ST, Miami, FL 33186",
-      "county": "Miami-Dade",
-      "lat": 25.68577,
-      "lng": -80.402463,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2332627",
-      "latest_inspection": "08/19/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 283,
-      "name": "Coyo Taco",
-      "address": "2320 NW 2ND AVE, Miami, FL 33127",
-      "county": "Miami-Dade",
-      "lat": 25.799597,
-      "lng": -80.199115,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2334573",
-      "latest_inspection": "08/06/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/06/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/06/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 284,
-      "name": "Party Cake Bakery",
-      "address": "20226 OLD CUTLER RD, Cutler Bay, FL 33189",
-      "county": "Miami-Dade",
-      "lat": 25.579199,
-      "lng": -80.333915,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2334754",
-      "latest_inspection": "07/27/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/27/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/27/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 285,
-      "name": "Tacos La Potranca & Cantina",
-      "address": "9479 S DIXIE HWY , UNIT 307, Pinecrest, FL 33156",
-      "county": "Miami-Dade",
-      "lat": 25.682621,
-      "lng": -80.314681,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2336312",
-      "latest_inspection": "08/12/2026",
-      "outreach_hook": "13 violations + 2x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/12/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/12/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 286,
-      "name": "Mr Baguette Ii",
-      "address": "2601 N MIAMI AVE, Miami, FL 33127",
-      "county": "Miami-Dade",
-      "lat": 25.801953,
-      "lng": -80.194972,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 2,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2336476",
-      "latest_inspection": "08/19/2026",
-      "outreach_hook": "13 violations + 2x ceiling/vent (V36) + 2 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/19/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 287,
-      "name": "D Oro Pizza Bar",
-      "address": "267 E FLAGLER ST, Miami, FL 33131",
-      "county": "Miami-Dade",
-      "lat": 25.774329,
-      "lng": -80.188834,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2336517",
-      "latest_inspection": "08/14/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 288,
-      "name": "El Palacio De Los Jugos",
-      "address": "5721-5741 W FLAGLER ST, Miami, FL 33126",
-      "county": "Miami-Dade",
-      "lat": 25.770827,
-      "lng": -80.288841,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2336970",
-      "latest_inspection": "08/17/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/17/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 289,
-      "name": "Danielle Gelato",
-      "address": "3444 MAIN HWY # 20, Coconut Grove, FL 33133",
-      "county": "Miami-Dade",
-      "lat": 25.727222,
-      "lng": -80.243281,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2337834",
-      "latest_inspection": "08/07/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/07/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/07/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 290,
-      "name": "Strada In The Grove",
-      "address": "3197 COMMODORE PLZ, Miami, FL 33133",
-      "county": "Miami-Dade",
-      "lat": 25.727364,
-      "lng": -80.244367,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 2,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2338362",
-      "latest_inspection": "07/14/2026",
-      "outreach_hook": "10 violations + 2x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 291,
-      "name": "Kubco Wynwood Llc",
-      "address": "1900 NE MIAMI CT K37 & K38, Miami, FL 33132",
-      "county": "Miami-Dade",
-      "lat": 25.794685,
-      "lng": -80.194167,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 2,
-      "disposition": "Call Back - Admin. complaint recommended",
-      "priority": "WARM",
-      "license": "2338459",
-      "latest_inspection": "07/31/2026",
-      "outreach_hook": "13 violations + 2x ceiling/vent (V36) + 2 high-priority + call back - admin. complaint recommended",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC). Cited 2x.",
-          "severity": "High Priority",
-          "date": "07/31/2026",
-          "disposition": "Call Back - Admin. complaint recommended"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/31/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 292,
-      "name": "Maman",
-      "address": "2008 BISCAYNE BLVD, Miami, FL 33137",
-      "county": "Miami-Dade",
-      "lat": 25.795605,
-      "lng": -80.189095,
-      "totalViolations": 16,
-      "hpViolations": 1,
-      "v36Count": 1,
-      "disposition": "Warning Issued",
-      "priority": "WARM",
-      "license": "2338528",
-      "latest_inspection": "07/14/2026",
-      "outreach_hook": "16 violations + 1x ceiling/vent (V36) + 1 high-priority + warning issued",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": "Warning Issued"
-        },
-        {
-          "description": "1 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "07/14/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 293,
-      "name": "Holy Burek",
-      "address": "401 BISCAYNE BLVD STE 1134, Miami, FL 33132",
-      "county": "Miami-Dade",
-      "lat": 25.778826,
-      "lng": -80.188254,
-      "totalViolations": 13,
-      "hpViolations": 2,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "2338817",
-      "latest_inspection": "08/10/2026",
-      "outreach_hook": "13 violations + 1x ceiling/vent (V36) + 2 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/10/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "2 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/10/2026",
-          "disposition": ""
-        }
-      ]
-    },
-    {
-      "id": 294,
-      "name": "Harbor View Cafe/One Duval",
-      "address": "1 DUVAL ST, Key West, FL 33040",
-      "county": "Monroe",
-      "lat": 24.560639,
-      "lng": -81.806318,
-      "totalViolations": 10,
-      "hpViolations": 3,
-      "v36Count": 1,
-      "disposition": "Inspection Completed - No Further Action",
-      "priority": "WARM",
-      "license": "5400914",
-      "latest_inspection": "08/11/2026",
-      "outreach_hook": "10 violations + 1x ceiling/vent (V36) + 3 high-priority + inspection completed - no further action",
-      "violations": [
-        {
-          "description": "Violation 36 — Floors, walls, ceilings & attached equipment not properly constructed/clean, or rooms/equipment not properly vented (ceiling tiles, vent covers, exhaust/HVAC).",
-          "severity": "High Priority",
-          "date": "08/11/2026",
-          "disposition": "Inspection Completed - No Further Action"
-        },
-        {
-          "description": "3 high-priority violation(s) cited — items requiring immediate corrective action per DBPR standards.",
-          "severity": "High Priority",
-          "date": "08/11/2026",
           "disposition": ""
         }
       ]
